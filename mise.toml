@@ -3,7 +3,3 @@
 go = "1.27.1"
 node = "24"
 uv = "0.13.6"
-
-[env]
-# The LinkML version every generator runs with. Change it on purpose, in its own commit, and regenerate.
-LINKML = "linkml==1.12.1"

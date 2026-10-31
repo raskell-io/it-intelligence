@@ -1,7 +1,9 @@
 # it-intelligence. Every target runs through mise so the pinned tool versions are used.
 SHELL := /bin/bash
 MISE  := mise exec --
-LINKML_RUN := $(MISE) uvx --from $${LINKML}
+# The LinkML version every generator runs with. Change it on purpose, in its own commit, and regenerate.
+LINKML ?= linkml==1.12.1
+LINKML_RUN := $(MISE) uvx --from $(LINKML)
 SCHEMA := ontology/context_model.yaml
 GEN    := ontology/generated
 COMPOSE := docker compose -f deploy/compose.yaml
