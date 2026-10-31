@@ -1,9 +1,22 @@
-# it-intelligence
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="docs/brand/lockup-light.svg">
+    <img src="docs/brand/lockup-dark.svg" alt="it-intelligence" height="56">
+  </picture>
+</p>
 
-A reference implementation of an **Enterprise Context Platform**: one model of what exists in a company's
-IT, who owns it, how it connects and whether it matches the strategy, built from the disagreeing exports
-of the company's own tools, and served with its evidence to people (web UI), systems (REST) and coding
-agents (MCP).
+<p align="center"><b>A reference Enterprise Context Platform: one sourced model of a company's IT,<br>
+for people (web), systems (REST) and agents (MCP).</b></p>
+
+<p align="center">
+  <a href="#run-it"><b>Run it</b></a> ·
+  <a href="https://raskell.io/articles/it-intelligence/">The argument</a> ·
+  <a href="BRIEF.md">The design</a> ·
+  <a href="#what-it-leaves-out">What it leaves out</a>
+</p>
+
+One model of what exists in a company's IT, who owns it, how it connects and whether it matches the
+strategy, built from the disagreeing exports of the company's own tools, and served with its evidence.
 
 It is the companion of two articles on raskell.io: *IT Intelligence: The Missing Data Layer of Enterprise
 IT* (the argument) and *Building IT Intelligence: A Reference Implementation in One Repository* (this
@@ -105,4 +118,5 @@ A reference earns trust by being honest about its gaps.
 
 ## Licence
 
-Apache-2.0 OR MIT, at your option. The Kestrel Group and everything about it is fictional.
+Apache-2.0 OR MIT, at your option. The Kestrel Group and everything about it is fictional. The marks in
+`docs/brand/` are the project's identity, not covered by the code licence; see `docs/brand/README.md`.
