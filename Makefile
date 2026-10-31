@@ -26,7 +26,7 @@ ontology: ## regenerate everything in ontology/generated from the LinkML schema
 	$(MISE) gofmt -w $(GEN)/go
 
 ontology-check: ontology ## fail if generated files differ from what is committed
-	git diff --exit-code -- $(GEN) store/vocabulary.sql web/lib/generated
+	git diff --exit-code -- $(GEN) store/vocabulary.sql web/lib/generated ':!$(GEN)/docs'
 
 build: ## build the itx binary into bin/
 	$(MISE) go build -o bin/itx ./cmd/itx

@@ -5,3 +5,6 @@ web/.next/
 web/next-env.d.ts
 web/tsconfig.tsbuildinfo
 .DS_Store
+# LinkML docs: generated on demand by make ontology. Not committed, because gen-doc writes files that differ
+# only in case (Exposure.md, exposure.md) and case-insensitive file systems keep only one of them.
+ontology/generated/docs/
