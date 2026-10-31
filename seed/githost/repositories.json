@@ -1,0 +1,634 @@
+[
+  {
+    "full_name": "kestrel/analytics-workbench",
+    "name": "analytics-workbench",
+    "team": "data-platform",
+    "description": "Notebooks and dashboards for analysts.",
+    "readme_excerpt": "Notebooks and dashboards for analysts.",
+    "archived": false,
+    "pushed_at": "2026-11-03T03:00:00Z",
+    "committers_12m": 3,
+    "catalog_info": {
+      "ea_application_id": "APP-0221"
+    }
+  },
+  {
+    "full_name": "kestrel/architecture-decisions",
+    "name": "architecture-decisions",
+    "team": "platform-engineering",
+    "description": "Group architecture decision records.",
+    "readme_excerpt": "Group architecture decision records.",
+    "archived": false,
+    "pushed_at": "2026-11-01T03:00:00Z",
+    "committers_12m": 8
+  },
+  {
+    "full_name": "kestrel/broker-portal",
+    "name": "broker-portal",
+    "team": "broker-channel",
+    "description": "Portal for independent brokers.",
+    "readme_excerpt": "Portal for independent brokers.",
+    "archived": false,
+    "pushed_at": "2026-11-08T03:00:00Z",
+    "committers_12m": 4,
+    "catalog_info": {
+      "ea_application_id": "APP-0190"
+    }
+  },
+  {
+    "full_name": "kestrel/ci-templates",
+    "name": "ci-templates",
+    "team": "platform-engineering",
+    "description": "Shared pipeline templates and runners.",
+    "readme_excerpt": "Shared pipeline templates and runners.",
+    "archived": false,
+    "pushed_at": "2026-11-11T03:00:00Z",
+    "committers_12m": 6,
+    "catalog_info": {
+      "ea_application_id": "APP-0260"
+    }
+  },
+  {
+    "full_name": "kestrel/claims-data-export",
+    "name": "claims-data-export",
+    "team": "claims-platform",
+    "description": "One-off export scripts for claims data.",
+    "readme_excerpt": "One-off export scripts for claims data.",
+    "archived": false,
+    "pushed_at": "2026-09-03T03:00:00Z",
+    "committers_12m": 1
+  },
+  {
+    "full_name": "kestrel/claims-intake",
+    "name": "claims-intake",
+    "team": "claims-platform",
+    "description": "First notice of loss: receives and triages new claims.",
+    "readme_excerpt": "First notice of loss: receives and triages new claims.",
+    "archived": false,
+    "pushed_at": "2026-11-09T03:00:00Z",
+    "committers_12m": 5
+  },
+  {
+    "full_name": "kestrel/claims-intake-web",
+    "name": "claims-intake-web",
+    "team": "claims-platform",
+    "description": "Web form for reporting a claim online.",
+    "readme_excerpt": "Web form for reporting a claim online.",
+    "archived": false,
+    "pushed_at": "2026-11-03T03:00:00Z",
+    "committers_12m": 3
+  },
+  {
+    "full_name": "kestrel/clm-settle",
+    "name": "clm-settle",
+    "team": "claims-platform",
+    "description": "Claims settlement and reserve calculation.",
+    "readme_excerpt": "Claims settlement and reserve calculation.",
+    "archived": false,
+    "pushed_at": "2026-11-06T03:00:00Z",
+    "committers_12m": 4,
+    "catalog_info": {
+      "ea_application_id": "APP-0151"
+    }
+  },
+  {
+    "full_name": "kestrel/collections-svc",
+    "name": "collections-svc",
+    "team": "payments",
+    "description": "Dunning and collections.",
+    "readme_excerpt": "Dunning and collections.",
+    "archived": false,
+    "pushed_at": "2026-11-02T03:00:00Z",
+    "committers_12m": 3,
+    "catalog_info": {
+      "ea_application_id": "APP-0171"
+    }
+  },
+  {
+    "full_name": "kestrel/commission-engine",
+    "name": "commission-engine",
+    "team": "broker-channel",
+    "description": "Broker commission calculation and statements.",
+    "readme_excerpt": "Broker commission calculation and statements.",
+    "archived": false,
+    "pushed_at": "2026-10-18T03:00:00Z",
+    "committers_12m": 2,
+    "catalog_info": {
+      "ea_application_id": "APP-0191"
+    }
+  },
+  {
+    "full_name": "kestrel/customer-master",
+    "name": "customer-master",
+    "team": "customer-digital",
+    "description": "Golden record for customers and partners.",
+    "readme_excerpt": "Golden record for customers and partners.",
+    "archived": false,
+    "pushed_at": "2026-10-29T03:00:00Z",
+    "committers_12m": 4,
+    "catalog_info": {
+      "ea_application_id": "APP-0181"
+    }
+  },
+  {
+    "full_name": "kestrel/customer-portal-bff",
+    "name": "customer-portal-bff",
+    "team": "customer-digital",
+    "description": "Backend for frontend of the customer portal.",
+    "readme_excerpt": "Backend for frontend of the customer portal.",
+    "archived": false,
+    "pushed_at": "2026-11-10T03:00:00Z",
+    "committers_12m": 5,
+    "catalog_info": {
+      "ea_application_id": "APP-0180"
+    }
+  },
+  {
+    "full_name": "kestrel/customer-portal-web",
+    "name": "customer-portal-web",
+    "team": "customer-digital",
+    "description": "The customer portal frontend.",
+    "readme_excerpt": "The customer portal frontend.",
+    "archived": false,
+    "pushed_at": "2026-11-11T03:00:00Z",
+    "committers_12m": 8,
+    "catalog_info": {
+      "ea_application_id": "APP-0180"
+    }
+  },
+  {
+    "full_name": "kestrel/dbt-models",
+    "name": "dbt-models",
+    "team": "data-platform",
+    "description": "Shared dbt models.",
+    "readme_excerpt": "Shared dbt models.",
+    "archived": false,
+    "pushed_at": "2026-11-09T03:00:00Z",
+    "committers_12m": 4
+  },
+  {
+    "full_name": "kestrel/design-system",
+    "name": "design-system",
+    "team": "customer-digital",
+    "description": "Kestrel UI components.",
+    "readme_excerpt": "Kestrel UI components.",
+    "archived": false,
+    "pushed_at": "2026-11-08T03:00:00Z",
+    "committers_12m": 6
+  },
+  {
+    "full_name": "kestrel/doc-archive",
+    "name": "doc-archive",
+    "team": "integration-services",
+    "description": "Long-term archive for customer documents.",
+    "readme_excerpt": "Long-term archive for customer documents.",
+    "archived": false,
+    "pushed_at": "2026-08-24T03:00:00Z",
+    "committers_12m": 1,
+    "catalog_info": {
+      "ea_application_id": "APP-0233"
+    }
+  },
+  {
+    "full_name": "kestrel/doc-templates-old",
+    "name": "doc-templates-old",
+    "team": "integration-services",
+    "description": "Old document templates, kept for reference.",
+    "readme_excerpt": "Old document templates, kept for reference.",
+    "archived": true,
+    "pushed_at": "2024-05-26T03:00:00Z",
+    "committers_12m": 0
+  },
+  {
+    "full_name": "kestrel/document-service",
+    "name": "document-service",
+    "team": "integration-services",
+    "description": "Generates, stores and delivers documents.",
+    "readme_excerpt": "Generates, stores and delivers documents.",
+    "archived": false,
+    "pushed_at": "2026-10-30T03:00:00Z",
+    "committers_12m": 3,
+    "catalog_info": {
+      "ea_application_id": "APP-0232"
+    }
+  },
+  {
+    "full_name": "kestrel/edw-pipelines",
+    "name": "edw-pipelines",
+    "team": "data-platform",
+    "description": "Loads and models for the enterprise data warehouse.",
+    "readme_excerpt": "Loads and models for the enterprise data warehouse.",
+    "archived": false,
+    "pushed_at": "2026-11-09T03:00:00Z",
+    "committers_12m": 6,
+    "catalog_info": {
+      "ea_application_id": "APP-0220"
+    }
+  },
+  {
+    "full_name": "kestrel/esb-config",
+    "name": "esb-config",
+    "team": "integration-services",
+    "description": "Flows and configuration of the group service bus.",
+    "readme_excerpt": "Flows and configuration of the group service bus.",
+    "archived": false,
+    "pushed_at": "2026-11-07T03:00:00Z",
+    "committers_12m": 3,
+    "catalog_info": {
+      "ea_application_id": "APP-0230"
+    }
+  },
+  {
+    "full_name": "kestrel/fin-reporting",
+    "name": "fin-reporting",
+    "team": "finance-systems",
+    "description": "Statutory and management reporting.",
+    "readme_excerpt": "Statutory and management reporting.",
+    "archived": false,
+    "pushed_at": "2026-10-21T03:00:00Z",
+    "committers_12m": 2,
+    "catalog_info": {
+      "ea_application_id": "APP-0201"
+    }
+  },
+  {
+    "full_name": "kestrel/fraud-screening",
+    "name": "fraud-screening",
+    "team": "payments",
+    "description": "Rules and scores for payment fraud.",
+    "readme_excerpt": "Rules and scores for payment fraud.",
+    "archived": false,
+    "pushed_at": "2026-11-04T03:00:00Z",
+    "committers_12m": 3,
+    "catalog_info": {
+      "ea_application_id": "APP-0172"
+    }
+  },
+  {
+    "full_name": "kestrel/gateway-config",
+    "name": "gateway-config",
+    "team": "integration-services",
+    "description": "Routes and policies of the API gateway.",
+    "readme_excerpt": "Routes and policies of the API gateway.",
+    "archived": false,
+    "pushed_at": "2026-11-10T03:00:00Z",
+    "committers_12m": 4,
+    "catalog_info": {
+      "ea_application_id": "APP-0231"
+    }
+  },
+  {
+    "full_name": "kestrel/gl-core",
+    "name": "gl-core",
+    "team": "finance-systems",
+    "description": "General ledger integration and postings.",
+    "readme_excerpt": "General ledger integration and postings.",
+    "archived": false,
+    "pushed_at": "2026-10-25T03:00:00Z",
+    "committers_12m": 3,
+    "catalog_info": {
+      "ea_application_id": "APP-0200"
+    }
+  },
+  {
+    "full_name": "kestrel/helm-charts",
+    "name": "helm-charts",
+    "team": "platform-engineering",
+    "description": "Helm charts used by every team.",
+    "readme_excerpt": "Helm charts used by every team.",
+    "archived": false,
+    "pushed_at": "2026-11-10T03:00:00Z",
+    "committers_12m": 7
+  },
+  {
+    "full_name": "kestrel/identity-hub",
+    "name": "identity-hub",
+    "team": "identity-and-access",
+    "description": "Customer and employee login, OIDC provider.",
+    "readme_excerpt": "Customer and employee login, OIDC provider.",
+    "archived": false,
+    "pushed_at": "2026-11-10T03:00:00Z",
+    "committers_12m": 5,
+    "catalog_info": {
+      "ea_application_id": "APP-0240"
+    }
+  },
+  {
+    "full_name": "kestrel/java-commons",
+    "name": "java-commons",
+    "team": "platform-engineering",
+    "description": "Shared Java libraries.",
+    "readme_excerpt": "Shared Java libraries.",
+    "archived": false,
+    "pushed_at": "2026-11-07T03:00:00Z",
+    "committers_12m": 9
+  },
+  {
+    "full_name": "kestrel/kestrel-mobile",
+    "name": "kestrel-mobile",
+    "team": "customer-digital",
+    "description": "The mobile app, iOS and Android.",
+    "readme_excerpt": "The mobile app, iOS and Android.",
+    "archived": false,
+    "pushed_at": "2026-11-05T03:00:00Z",
+    "committers_12m": 3,
+    "catalog_info": {
+      "ea_application_id": "APP-0183"
+    }
+  },
+  {
+    "full_name": "kestrel/load-tests",
+    "name": "load-tests",
+    "team": "platform-engineering",
+    "description": "Load tests for customer-facing services.",
+    "readme_excerpt": "Load tests for customer-facing services.",
+    "archived": false,
+    "pushed_at": "2026-10-10T03:00:00Z",
+    "committers_12m": 3
+  },
+  {
+    "full_name": "kestrel/notify-svc",
+    "name": "notify-svc",
+    "team": "customer-digital",
+    "description": "E-mail, SMS and push notifications.",
+    "readme_excerpt": "E-mail, SMS and push notifications.",
+    "archived": false,
+    "pushed_at": "2026-10-13T03:00:00Z",
+    "committers_12m": 2
+  },
+  {
+    "full_name": "kestrel/obs-stack",
+    "name": "obs-stack",
+    "team": "platform-engineering",
+    "description": "Metrics, logs and traces for every cluster.",
+    "readme_excerpt": "Metrics, logs and traces for every cluster.",
+    "archived": false,
+    "pushed_at": "2026-11-09T03:00:00Z",
+    "committers_12m": 4,
+    "catalog_info": {
+      "ea_application_id": "APP-0261"
+    }
+  },
+  {
+    "full_name": "kestrel/oidc-playground",
+    "name": "oidc-playground",
+    "team": "identity-and-access",
+    "description": "Experiments with OIDC flows.",
+    "readme_excerpt": "Experiments with OIDC flows.",
+    "archived": false,
+    "pushed_at": "2026-07-15T03:00:00Z",
+    "committers_12m": 1
+  },
+  {
+    "full_name": "kestrel/partner-api",
+    "name": "partner-api",
+    "team": "broker-channel",
+    "description": "REST API for comparison sites and partners.",
+    "readme_excerpt": "REST API for comparison sites and partners.",
+    "archived": false,
+    "pushed_at": "2026-11-01T03:00:00Z",
+    "committers_12m": 3,
+    "catalog_info": {
+      "ea_application_id": "APP-0192"
+    }
+  },
+  {
+    "full_name": "kestrel/payhub",
+    "name": "payhub",
+    "team": "finance-systems",
+    "description": "Outgoing payments for finance: suppliers and refunds.",
+    "readme_excerpt": "Outgoing payments for finance: suppliers and refunds.",
+    "archived": false,
+    "pushed_at": "2026-10-08T03:00:00Z",
+    "committers_12m": 2,
+    "catalog_info": {
+      "ea_application_id": "APP-0175"
+    }
+  },
+  {
+    "full_name": "kestrel/payment-gateway",
+    "name": "payment-gateway",
+    "team": "payments",
+    "description": "Card, direct debit and bank transfer payments.",
+    "readme_excerpt": "Card, direct debit and bank transfer payments.",
+    "archived": false,
+    "pushed_at": "2026-11-11T03:00:00Z",
+    "committers_12m": 6,
+    "catalog_info": {
+      "ea_application_id": "APP-0170"
+    }
+  },
+  {
+    "full_name": "kestrel/pol-adm-svc",
+    "name": "pol-adm-svc",
+    "team": "claims-platform",
+    "description": "Policy administration service: contracts, endorsements, renewals.",
+    "readme_excerpt": "Policy administration service: contracts, endorsements, renewals.",
+    "archived": false,
+    "pushed_at": "2026-11-10T03:00:00Z",
+    "committers_12m": 7,
+    "catalog_info": {
+      "ea_application_id": "APP-0142"
+    }
+  },
+  {
+    "full_name": "kestrel/pol-adm-ui",
+    "name": "pol-adm-ui",
+    "team": "claims-platform",
+    "description": "Frontend for policy administration. Talks to pol-adm-svc.",
+    "readme_excerpt": "Frontend for policy administration. Talks to pol-adm-svc.",
+    "archived": false,
+    "pushed_at": "2026-11-07T03:00:00Z",
+    "committers_12m": 4
+  },
+  {
+    "full_name": "kestrel/policy-batch",
+    "name": "policy-batch",
+    "team": "policy-core",
+    "description": "Nightly renewal and indexation jobs.",
+    "readme_excerpt": "Nightly renewal and indexation jobs.",
+    "archived": false,
+    "pushed_at": "2026-09-28T03:00:00Z",
+    "committers_12m": 2
+  },
+  {
+    "full_name": "kestrel/product-catalogue",
+    "name": "product-catalogue",
+    "team": "policy-core",
+    "description": "Insurance products, tariffs and coverages.",
+    "readme_excerpt": "Insurance products, tariffs and coverages.",
+    "archived": false,
+    "pushed_at": "2026-10-23T03:00:00Z",
+    "committers_12m": 3,
+    "catalog_info": {
+      "ea_application_id": "APP-0160"
+    }
+  },
+  {
+    "full_name": "kestrel/quote-classic",
+    "name": "quote-classic",
+    "team": "policy-core",
+    "description": "Legacy quoting. Replaced by rating-engine.",
+    "readme_excerpt": "Legacy quoting. Replaced by rating-engine.",
+    "archived": true,
+    "pushed_at": "2024-12-12T03:00:00Z",
+    "committers_12m": 0,
+    "catalog_info": {
+      "ea_application_id": "APP-0098"
+    }
+  },
+  {
+    "full_name": "kestrel/rating-engine",
+    "name": "rating-engine",
+    "team": "policy-core",
+    "description": "Premium calculation. Ask Jonas before changing anything.",
+    "readme_excerpt": "Premium calculation. Ask Jonas before changing anything.",
+    "archived": false,
+    "pushed_at": "2026-10-31T03:00:00Z",
+    "committers_12m": 1,
+    "catalog_info": {
+      "ea_application_id": "APP-0161"
+    }
+  },
+  {
+    "full_name": "kestrel/reg-reporting",
+    "name": "reg-reporting",
+    "team": "risk-analytics",
+    "description": "Supervisory reporting.",
+    "readme_excerpt": "Supervisory reporting.",
+    "archived": false,
+    "pushed_at": "2026-10-27T03:00:00Z",
+    "committers_12m": 3,
+    "catalog_info": {
+      "ea_application_id": "APP-0211"
+    }
+  },
+  {
+    "full_name": "kestrel/report-templates",
+    "name": "report-templates",
+    "team": "finance-systems",
+    "description": "Shared report templates for finance reporting.",
+    "readme_excerpt": "Shared report templates for finance reporting.",
+    "archived": false,
+    "pushed_at": "2026-09-13T03:00:00Z",
+    "committers_12m": 2
+  },
+  {
+    "full_name": "kestrel/risk-models",
+    "name": "risk-models",
+    "team": "risk-analytics",
+    "description": "Actuarial and risk models.",
+    "readme_excerpt": "Actuarial and risk models.",
+    "archived": false,
+    "pushed_at": "2026-11-06T03:00:00Z",
+    "committers_12m": 5,
+    "catalog_info": {
+      "ea_application_id": "APP-0210"
+    }
+  },
+  {
+    "full_name": "kestrel/risk-sandbox",
+    "name": "risk-sandbox",
+    "team": "risk-analytics",
+    "description": "Scratch notebooks for model ideas.",
+    "readme_excerpt": "Scratch notebooks for model ideas.",
+    "archived": false,
+    "pushed_at": "2026-04-26T03:00:00Z",
+    "committers_12m": 2
+  },
+  {
+    "full_name": "kestrel/solvency-calc",
+    "name": "solvency-calc",
+    "team": "risk-analytics",
+    "description": "Solvency capital calculation.",
+    "readme_excerpt": "Solvency capital calculation.",
+    "archived": false,
+    "pushed_at": "2026-09-23T03:00:00Z",
+    "committers_12m": 2,
+    "catalog_info": {
+      "ea_application_id": "APP-0212"
+    }
+  },
+  {
+    "full_name": "kestrel/south-camel-hub",
+    "name": "south-camel-hub",
+    "team": "south-digital",
+    "description": "Integration routes for Kestrel South.",
+    "readme_excerpt": "Integration routes for Kestrel South.",
+    "archived": false,
+    "pushed_at": "2026-11-08T03:00:00Z",
+    "committers_12m": 2
+  },
+  {
+    "full_name": "kestrel/south-claims",
+    "name": "south-claims",
+    "team": "south-digital",
+    "description": "Claims handling for Kestrel South.",
+    "readme_excerpt": "Claims handling for Kestrel South.",
+    "archived": false,
+    "pushed_at": "2026-11-04T03:00:00Z",
+    "committers_12m": 3,
+    "catalog_info": {
+      "ea_application_id": "APP-0251"
+    }
+  },
+  {
+    "full_name": "kestrel/south-infra",
+    "name": "south-infra",
+    "team": "south-digital",
+    "description": "Infrastructure code for Kestrel South.",
+    "readme_excerpt": "Infrastructure code for Kestrel South.",
+    "archived": false,
+    "pushed_at": "2026-11-06T03:00:00Z",
+    "committers_12m": 2
+  },
+  {
+    "full_name": "kestrel/south-portal",
+    "name": "south-portal",
+    "team": "south-digital",
+    "description": "Customer portal for Kestrel South.",
+    "readme_excerpt": "Customer portal for Kestrel South.",
+    "archived": false,
+    "pushed_at": "2026-11-09T03:00:00Z",
+    "committers_12m": 4,
+    "catalog_info": {
+      "ea_application_id": "APP-0250"
+    }
+  },
+  {
+    "full_name": "kestrel/terraform-modules",
+    "name": "terraform-modules",
+    "team": "platform-engineering",
+    "description": "Terraform modules for cloud accounts.",
+    "readme_excerpt": "Terraform modules for cloud accounts.",
+    "archived": false,
+    "pushed_at": "2026-11-03T03:00:00Z",
+    "committers_12m": 5
+  },
+  {
+    "full_name": "kestrel/treasury",
+    "name": "treasury",
+    "team": "finance-systems",
+    "description": "Cash positions and liquidity planning.",
+    "readme_excerpt": "Cash positions and liquidity planning.",
+    "archived": false,
+    "pushed_at": "2026-10-03T03:00:00Z",
+    "committers_12m": 2,
+    "catalog_info": {
+      "ea_application_id": "APP-0202"
+    }
+  },
+  {
+    "full_name": "kestrel/uw-workbench",
+    "name": "uw-workbench",
+    "team": "policy-core",
+    "description": "Underwriter case handling for commercial lines.",
+    "readme_excerpt": "Underwriter case handling for commercial lines.",
+    "archived": false,
+    "pushed_at": "2026-10-28T03:00:00Z",
+    "committers_12m": 4,
+    "catalog_info": {
+      "ea_application_id": "APP-0163"
+    }
+  }
+]

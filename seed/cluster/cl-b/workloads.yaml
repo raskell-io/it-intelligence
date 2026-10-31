@@ -1,0 +1,56 @@
+# kubectl get deployments,cronjobs -A -o yaml (trimmed), cluster cl-b
+apiVersion: v1
+kind: List
+items:
+    - apiVersion: apps/v1
+      kind: Deployment
+      metadata:
+        name: camel-hub
+        namespace: south-int
+        labels:
+            app.kestrel.example/application-id: south-integration-hub
+            app.kubernetes.io/name: camel-hub
+            source.kestrel.example/repository: kestrel/south-camel-hub
+        creationTimestamp: "2026-03-30T03:00:00Z"
+      spec:
+        image: registry.kestrel.example/camel-hub:1.0
+        replicas: 2
+    - apiVersion: apps/v1
+      kind: Deployment
+      metadata:
+        name: camel-hub-admin
+        namespace: south-int
+        labels:
+            app.kestrel.example/application-id: south-integration-hub
+            app.kubernetes.io/name: camel-hub-admin
+            source.kestrel.example/repository: kestrel/south-camel-hub
+        creationTimestamp: "2026-03-12T03:00:00Z"
+      spec:
+        image: registry.kestrel.example/camel-hub-admin:1.6
+        replicas: 2
+    - apiVersion: apps/v1
+      kind: Deployment
+      metadata:
+        name: south-portal
+        namespace: south-prod
+        labels:
+            app.kestrel.example/application-id: APP-0250
+            app.kubernetes.io/name: south-portal
+            source.kestrel.example/repository: kestrel/south-portal
+        creationTimestamp: "2026-03-21T03:00:00Z"
+      spec:
+        image: registry.kestrel.example/south-portal:1.3
+        replicas: 2
+    - apiVersion: apps/v1
+      kind: Deployment
+      metadata:
+        name: south-claims
+        namespace: south-prod
+        labels:
+            app.kestrel.example/application-id: APP-0251
+            app.kubernetes.io/name: south-claims
+            source.kestrel.example/repository: kestrel/south-claims
+        creationTimestamp: "2026-03-21T03:00:00Z"
+      spec:
+        image: registry.kestrel.example/south-claims:1.3
+        replicas: 2

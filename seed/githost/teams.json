@@ -1,0 +1,62 @@
+[
+  {
+    "slug": "claims-platform",
+    "name": "Claims Platform",
+    "description": "Claims Platform team"
+  },
+  {
+    "slug": "policy-core",
+    "name": "Policy Core",
+    "description": "Policy Core team"
+  },
+  {
+    "slug": "payments",
+    "name": "Payments",
+    "description": "Payments team"
+  },
+  {
+    "slug": "customer-digital",
+    "name": "Customer Digital",
+    "description": "Customer Digital team"
+  },
+  {
+    "slug": "broker-channel",
+    "name": "Broker Channel",
+    "description": "Broker Channel team"
+  },
+  {
+    "slug": "finance-systems",
+    "name": "Finance Systems",
+    "description": "Finance Systems team"
+  },
+  {
+    "slug": "risk-analytics",
+    "name": "Risk Analytics",
+    "description": "Risk Analytics team"
+  },
+  {
+    "slug": "data-platform",
+    "name": "Data Platform",
+    "description": "Data Platform team"
+  },
+  {
+    "slug": "integration-services",
+    "name": "Integration Services",
+    "description": "Integration Services team"
+  },
+  {
+    "slug": "identity-and-access",
+    "name": "Identity and Access",
+    "description": "Identity and Access team"
+  },
+  {
+    "slug": "south-digital",
+    "name": "South Digital",
+    "description": "South Digital team"
+  },
+  {
+    "slug": "platform-engineering",
+    "name": "Platform Engineering",
+    "description": "Platform Engineering team"
+  }
+]

@@ -1,0 +1,142 @@
+# Entity kinds. Keep the core small: every kind must answer a question someone asks.
+# A new kind needs an entry in CHANGELOG.md naming that question.
+# Relation slots listed on each class are defined in relations.yaml; generate from context_model.yaml.
+id: https://example.org/it-intelligence/entities
+name: entities
+default_prefix: ctx
+default_range: string
+prefixes:
+  linkml: https://w3id.org/linkml/
+  ctx: https://example.org/it-intelligence/
+imports:
+  - linkml:types
+
+classes:
+  Entity:
+    abstract: true
+    description: Something the Context Model concluded exists, from one or more observations.
+    slots: [id, name, standing, last_seen]
+
+  Application:
+    is_a: Entity
+    slots: [realised_by, deployed_as, owned_by, operated_by, supports, exposed_via, depends_on, replaced_by]
+    description: A thing the business recognises as one system, however many parts it has.
+    annotations: {ctx_id_pattern: "{short_name}"}
+    attributes:
+      lifecycle: {range: Lifecycle}
+      description: {}
+      ea_id: {description: "The application id in the EA repository, when it has one."}
+      not_in_ea: {range: boolean, description: "True when no EA repository record backs the application."}
+      incidents_90d: {range: integer, description: "Incidents in the last 90 days, from IT service management."}
+
+  Repository:
+    is_a: Entity
+    slots: [owned_by]
+    description: A code repository on the git host.
+    annotations: {ctx_id_pattern: "{org}/{name}"}
+    attributes:
+      description: {}
+      last_commit: {range: datetime}
+      committers_12m: {range: integer, description: "Distinct committers in the last twelve months."}
+      truck_factor: {range: integer, description: "People who would have to leave before the repository stalls."}
+      archived: {range: boolean, description: "The git host marks the repository read-only."}
+
+  Workload:
+    is_a: Entity
+    slots: [runs_in, built_from, owned_by]
+    description: A deployed unit on a cluster, such as a deployment, a stateful set or a cron job.
+    annotations: {ctx_id_pattern: "{namespace}/{name}"}
+    attributes:
+      workload_type: {}
+      replicas: {range: integer}
+      image: {}
+
+  Namespace:
+    is_a: Entity
+    slots: [owned_by]
+    description: A namespace on a container cluster.
+    annotations: {ctx_id_pattern: "{name}"}
+    attributes:
+      cluster: {}
+
+  Team:
+    is_a: Entity
+    slots: [part_of]
+    description: An accountable team.
+    annotations: {ctx_id_pattern: "{slug}"}
+
+  Capability:
+    is_a: Entity
+    slots: [refines]
+    description: A business capability from the enterprise architecture capability map.
+    annotations: {ctx_id_pattern: "{slug}"}
+    attributes:
+      level: {range: integer}
+
+  Endpoint:
+    is_a: Entity
+    slots: [routes_to, owned_by]
+    description: A reachable host and path prefix.
+    annotations: {ctx_id_pattern: "{host}{path}"}
+    attributes:
+      exposure: {range: Exposure}
+      waf: {range: WafMode}
+
+  Decision:
+    is_a: Entity
+    slots: [constrains, supersedes]
+    description: An architecture decision record, with the entities it constrains.
+    annotations: {ctx_id_pattern: "{repo}/{number}"}
+    attributes:
+      status: {range: DecisionStatus}
+      decided_on: {range: date}
+      url: {range: uri}
+
+  MarketUnit:
+    is_a: Entity
+    description: An organisational unit of the group, usually a country or a region.
+    annotations: {ctx_id_pattern: "{slug}"}
+
+slots:
+  id:
+    identifier: true
+    description: "The Context Model id, for example ctx:Application/policy-admin."
+  name:
+    required: true
+  standing:
+    range: Standing
+  last_seen:
+    range: datetime
+
+enums:
+  Standing:
+    description: Who is authoritative for a fact. Set per data set; an entity takes the standing of its data sets.
+    permissible_values:
+      secondary: {description: "mirrored from an authoritative system; the source wins"}
+      primary: {description: "the Context Model is authoritative"}
+  Basis:
+    description: How a relationship was established.
+    permissible_values:
+      asserted: {description: "straight from a source's own key, or confirmed by a person"}
+      derived: {description: "follows from other relationships by a named rule"}
+      inferred: {description: "proposed by the resolver with a model's help; carries a confidence and reasons"}
+  Lifecycle:
+    permissible_values:
+      planned: {}
+      production: {}
+      retiring: {}
+      retired: {}
+  Exposure:
+    permissible_values:
+      internal: {}
+      internet: {}
+  WafMode:
+    permissible_values:
+      enforced: {}
+      monitor: {}
+      none: {}
+  DecisionStatus:
+    permissible_values:
+      proposed: {}
+      accepted: {}
+      superseded: {}

@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata: {name: {{ .Release.Name }}-web, labels: {app.kubernetes.io/name: web}}
+spec:
+  replicas: {{ .Values.web.replicas }}
+  selector: {matchLabels: {app.kubernetes.io/name: web, app.kubernetes.io/instance: {{ .Release.Name }}}}
+  template:
+    metadata: {labels: {app.kubernetes.io/name: web, app.kubernetes.io/instance: {{ .Release.Name }}}}
+    spec:
+      containers:
+        - name: web
+          image: {{ .Values.image.web }}
+          env: [{name: ITX_API, value: "http://{{ .Release.Name }}-itx:8080"}]
+          ports: [{containerPort: 3000, name: http}]
+---
+apiVersion: v1
+kind: Service
+metadata: {name: {{ .Release.Name }}-web}
+spec:
+  selector: {app.kubernetes.io/name: web, app.kubernetes.io/instance: {{ .Release.Name }}}
+  ports: [{port: 80, targetPort: http, name: http}]

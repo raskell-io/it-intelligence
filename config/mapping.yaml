@@ -1,0 +1,6 @@
+# Conventions of the Kestrel Group that the mappers rely on. Change these for your own company.
+application_label: app.kestrel.example/application-id
+source_repository_label: source.kestrel.example/repository
+namespace_owner_label: team.kestrel.example/owner
+ea_id_pattern: '^APP-\d{4}$'
+support_group_suffixes: [" Support", " L2", " Operations"]

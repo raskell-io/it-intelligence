@@ -1,0 +1,13 @@
+team_id,name,market_unit,last_modified
+ORG-11,Claims Platform,MU-C,2026-03-17T03:00:00Z
+ORG-12,Policy Core,MU-C,2026-03-17T03:00:00Z
+ORG-13,Payments,MU-C,2026-03-17T03:00:00Z
+ORG-14,Customer Digital,MU-N,2026-03-17T03:00:00Z
+ORG-15,Broker Channel,MU-N,2026-03-17T03:00:00Z
+ORG-16,Finance Systems,MU-C,2026-03-17T03:00:00Z
+ORG-17,Risk Analytics,MU-C,2026-03-17T03:00:00Z
+ORG-18,Data Platform,MU-C,2026-03-17T03:00:00Z
+ORG-19,Integration Services,MU-C,2026-03-17T03:00:00Z
+ORG-20,Identity and Access,MU-C,2026-03-17T03:00:00Z
+ORG-21,South Digital,MU-S,2026-03-17T03:00:00Z
+ORG-22,Platform Engineering,MU-C,2026-03-17T03:00:00Z

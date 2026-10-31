@@ -1,0 +1,51 @@
+[
+  {
+    "policy_id": "waf-001",
+    "host": "api.kestrel.example",
+    "path": "/policies",
+    "mode": "enforced",
+    "updated_at": "2026-10-18T03:00:00Z"
+  },
+  {
+    "policy_id": "waf-002",
+    "host": "claims.kestrel.example",
+    "path": "/",
+    "mode": "enforced",
+    "updated_at": "2026-10-13T03:00:00Z"
+  },
+  {
+    "policy_id": "waf-003",
+    "host": "pay.kestrel.example",
+    "path": "/api",
+    "mode": "enforced",
+    "updated_at": "2026-10-08T03:00:00Z"
+  },
+  {
+    "policy_id": "waf-004",
+    "host": "www.kestrel.example",
+    "path": "/",
+    "mode": "enforced",
+    "updated_at": "2026-10-03T03:00:00Z"
+  },
+  {
+    "policy_id": "waf-005",
+    "host": "partners.kestrel.example",
+    "path": "/v1",
+    "mode": "monitor",
+    "updated_at": "2026-09-28T03:00:00Z"
+  },
+  {
+    "policy_id": "waf-006",
+    "host": "login.kestrel.example",
+    "path": "/",
+    "mode": "enforced",
+    "updated_at": "2026-09-23T03:00:00Z"
+  },
+  {
+    "policy_id": "waf-007",
+    "host": "www.kestrel-south.example",
+    "path": "/",
+    "mode": "monitor",
+    "updated_at": "2026-09-18T03:00:00Z"
+  }
+]

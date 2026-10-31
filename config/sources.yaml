@@ -1,0 +1,24 @@
+# Sources the reference ingests, and how they are scored.
+#
+# reference_time fixes "now" for the Kestrel seed, so scores and the verify checks are reproducible.
+# Remove it when you point the connectors at live sources.
+reference_time: 2026-11-12T03:00:00Z
+
+# Later sources win for names and attributes: the EA repository names applications.
+source_order: [cluster, gateway, waf, githost, itsm, earepo]
+
+# Weights of the four signals in a data set's overall score. A signal that does not apply (a data set
+# that asserts no relationships has no agreement) is left out and the rest are renormalised.
+weights: {freshness: 0.3, completeness: 0.2, agreement: 0.25, resolvability: 0.25}
+
+# Per source: mode (file or live), where file mode reads, how often the runner ingests it, and the
+# expected cycle: how recently a record must have changed, or been confirmed, to count as fresh.
+sources:
+  earepo:  {mode: file, dir: seed/earepo,  every: 24h, cycle: 180d}
+  itsm:    {mode: file, dir: seed/itsm,    every: 6h,  cycle: 90d}
+  githost: {mode: file, dir: seed/githost, every: 6h,  cycle: 365d}
+  cluster: {mode: file, dir: seed/cluster, every: 1h,  cycle: 30d}
+  gateway: {mode: file, dir: seed/gateway, every: 6h,  cycle: 180d}
+  waf:     {mode: file, dir: seed/waf,     every: 6h,  cycle: 180d}
+  # githost in live mode reads one GitHub organisation (token from GITHUB_TOKEN):
+  # githost: {mode: live, every: 6h, cycle: 365d, opts: {org: your-org}}

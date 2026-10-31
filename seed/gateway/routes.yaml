@@ -1,0 +1,74 @@
+# API gateway route export
+routes:
+    - id: rt-001
+      host: api.kestrel.example
+      path: /policies
+      upstream:
+        namespace: claims-prod
+        service: policy-admin
+      visibility: public
+      updated_at: "2026-11-04T03:00:00Z"
+    - id: rt-002
+      host: claims.kestrel.example
+      path: /
+      upstream:
+        namespace: claims-prod
+        service: claims-intake
+      visibility: public
+      updated_at: "2026-11-01T03:00:00Z"
+    - id: rt-003
+      host: pay.kestrel.example
+      path: /api
+      upstream:
+        namespace: payments-prod
+        service: payment-gateway
+      visibility: public
+      updated_at: "2026-10-29T03:00:00Z"
+    - id: rt-004
+      host: www.kestrel.example
+      path: /
+      upstream:
+        namespace: customer-prod
+        service: customer-portal
+      visibility: public
+      updated_at: "2026-10-26T03:00:00Z"
+    - id: rt-005
+      host: brokers.kestrel.example
+      path: /
+      upstream:
+        namespace: broker-prod
+        service: broker-portal
+      visibility: public
+      updated_at: "2026-10-23T03:00:00Z"
+    - id: rt-006
+      host: partners.kestrel.example
+      path: /v1
+      upstream:
+        namespace: broker-prod
+        service: partner-api
+      visibility: public
+      updated_at: "2026-10-20T03:00:00Z"
+    - id: rt-007
+      host: int.south.kestrel.example
+      path: /
+      upstream:
+        namespace: south-int
+        service: camel-hub
+      visibility: internal
+      updated_at: "2026-10-17T03:00:00Z"
+    - id: rt-008
+      host: login.kestrel.example
+      path: /
+      upstream:
+        namespace: identity-prod
+        service: identity-hub
+      visibility: public
+      updated_at: "2026-10-14T03:00:00Z"
+    - id: rt-009
+      host: www.kestrel-south.example
+      path: /
+      upstream:
+        namespace: south-prod
+        service: south-portal
+      visibility: public
+      updated_at: "2026-10-11T03:00:00Z"

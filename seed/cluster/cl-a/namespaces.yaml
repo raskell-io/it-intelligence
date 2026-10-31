@@ -1,0 +1,98 @@
+# kubectl get namespaces -A -o yaml (trimmed), cluster cl-a
+apiVersion: v1
+kind: List
+items:
+    - apiVersion: v1
+      kind: Namespace
+      metadata:
+        name: claims-prod
+        labels:
+            kubernetes.io/metadata.name: claims-prod
+        creationTimestamp: "2024-05-26T03:00:00Z"
+    - apiVersion: v1
+      kind: Namespace
+      metadata:
+        name: policy-prod
+        labels:
+            kubernetes.io/metadata.name: policy-prod
+            team.kestrel.example/owner: policy-core
+        creationTimestamp: "2024-06-15T03:00:00Z"
+    - apiVersion: v1
+      kind: Namespace
+      metadata:
+        name: payments-prod
+        labels:
+            kubernetes.io/metadata.name: payments-prod
+            team.kestrel.example/owner: payments
+        creationTimestamp: "2024-07-05T03:00:00Z"
+    - apiVersion: v1
+      kind: Namespace
+      metadata:
+        name: customer-prod
+        labels:
+            kubernetes.io/metadata.name: customer-prod
+            team.kestrel.example/owner: customer-digital
+        creationTimestamp: "2024-07-25T03:00:00Z"
+    - apiVersion: v1
+      kind: Namespace
+      metadata:
+        name: broker-prod
+        labels:
+            kubernetes.io/metadata.name: broker-prod
+            team.kestrel.example/owner: broker-channel
+        creationTimestamp: "2024-08-14T03:00:00Z"
+    - apiVersion: v1
+      kind: Namespace
+      metadata:
+        name: finance-prod
+        labels:
+            kubernetes.io/metadata.name: finance-prod
+            team.kestrel.example/owner: finance-systems
+        creationTimestamp: "2024-09-03T03:00:00Z"
+    - apiVersion: v1
+      kind: Namespace
+      metadata:
+        name: risk-prod
+        labels:
+            kubernetes.io/metadata.name: risk-prod
+            team.kestrel.example/owner: risk-analytics
+        creationTimestamp: "2024-09-23T03:00:00Z"
+    - apiVersion: v1
+      kind: Namespace
+      metadata:
+        name: data-prod
+        labels:
+            kubernetes.io/metadata.name: data-prod
+            team.kestrel.example/owner: data-platform
+        creationTimestamp: "2024-10-13T03:00:00Z"
+    - apiVersion: v1
+      kind: Namespace
+      metadata:
+        name: integration-prod
+        labels:
+            kubernetes.io/metadata.name: integration-prod
+            team.kestrel.example/owner: integration-services
+        creationTimestamp: "2024-11-02T03:00:00Z"
+    - apiVersion: v1
+      kind: Namespace
+      metadata:
+        name: identity-prod
+        labels:
+            kubernetes.io/metadata.name: identity-prod
+            team.kestrel.example/owner: identity-and-access
+        creationTimestamp: "2024-11-22T03:00:00Z"
+    - apiVersion: v1
+      kind: Namespace
+      metadata:
+        name: platform-prod
+        labels:
+            kubernetes.io/metadata.name: platform-prod
+            team.kestrel.example/owner: platform-engineering
+        creationTimestamp: "2024-12-12T03:00:00Z"
+    - apiVersion: v1
+      kind: Namespace
+      metadata:
+        name: batch-legacy
+        labels:
+            kubernetes.io/metadata.name: batch-legacy
+        creationTimestamp: "2025-01-01T03:00:00Z"

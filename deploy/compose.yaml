@@ -1,0 +1,36 @@
+# The whole reference on a laptop: PostgreSQL, itx (REST, MCP, workflow runner) and the web UI.
+#   make up && make seed && make ingest && open http://localhost:3000
+name: it-intelligence
+services:
+  postgres:
+    image: postgres:17-alpine
+    environment: {POSTGRES_USER: itx, POSTGRES_PASSWORD: itx, POSTGRES_DB: itx}
+    volumes: [pgdata:/var/lib/postgresql/data]
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U itx"]
+      interval: 2s
+      retries: 30
+
+  itx:
+    build: {context: .., dockerfile: Dockerfile}
+    environment:
+      ITX_DATABASE_URL: postgres://itx:itx@postgres:5432/itx
+      ITX_SCHEDULES: "0"      # set to 1 to ingest every source on its interval
+      # ANTHROPIC_API_KEY: ...  only with provider kind anthropic in config/resolver.yaml
+    volumes: [itxvar:/app/var]
+    ports: ["8080:8080"]
+    depends_on: {postgres: {condition: service_healthy}}
+    healthcheck:
+      test: ["CMD-SHELL", "wget -qO- http://localhost:8080/healthz || exit 1"]
+      interval: 3s
+      retries: 30
+
+  web:
+    build: {context: ../web}
+    environment: {ITX_API: "http://itx:8080"}
+    ports: ["3000:3000"]
+    depends_on: {itx: {condition: service_healthy}}
+
+volumes:
+  pgdata:
+  itxvar:

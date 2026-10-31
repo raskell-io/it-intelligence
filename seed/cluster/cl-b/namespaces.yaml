@@ -1,0 +1,20 @@
+# kubectl get namespaces -A -o yaml (trimmed), cluster cl-b
+apiVersion: v1
+kind: List
+items:
+    - apiVersion: v1
+      kind: Namespace
+      metadata:
+        name: south-prod
+        labels:
+            kubernetes.io/metadata.name: south-prod
+            team.kestrel.example/owner: south-digital
+        creationTimestamp: "2025-01-21T03:00:00Z"
+    - apiVersion: v1
+      kind: Namespace
+      metadata:
+        name: south-int
+        labels:
+            kubernetes.io/metadata.name: south-int
+            team.kestrel.example/owner: south-digital
+        creationTimestamp: "2025-02-10T03:00:00Z"

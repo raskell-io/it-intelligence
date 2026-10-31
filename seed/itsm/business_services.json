@@ -1,0 +1,307 @@
+[
+  {
+    "sys_id": "BS-1042",
+    "name": "PAS",
+    "support_group": "Claims Platform Support",
+    "operational_status": "operational",
+    "description": "Policy Administration System",
+    "sys_updated_on": "2026-11-01T03:00:00Z"
+  },
+  {
+    "sys_id": "BS-1002",
+    "name": "Claims Intake",
+    "ea_reference": "APP-0150",
+    "support_group": "Claims Platform Support",
+    "operational_status": "operational",
+    "description": "First notice of loss and claim triage.",
+    "sys_updated_on": "2026-10-31T03:00:00Z"
+  },
+  {
+    "sys_id": "BS-1003",
+    "name": "Claims Settlement",
+    "ea_reference": "APP-0151",
+    "support_group": "Claims Platform Support",
+    "operational_status": "operational",
+    "description": "Settlement, reserves and payout instructions for claims.",
+    "sys_updated_on": "2026-10-30T03:00:00Z"
+  },
+  {
+    "sys_id": "BS-1004",
+    "name": "Product Catalogue",
+    "ea_reference": "APP-0160",
+    "support_group": "Policy Core Support",
+    "operational_status": "operational",
+    "description": "Products, tariffs and coverages.",
+    "sys_updated_on": "2026-10-29T03:00:00Z"
+  },
+  {
+    "sys_id": "BS-1005",
+    "name": "Rating Engine",
+    "ea_reference": "APP-0161",
+    "support_group": "Policy Core Support",
+    "operational_status": "operational",
+    "description": "Premium calculation for all retail products.",
+    "sys_updated_on": "2026-10-28T03:00:00Z"
+  },
+  {
+    "sys_id": "BS-1006",
+    "name": "Policy Batch",
+    "ea_reference": "APP-0162",
+    "support_group": "Policy Core Support",
+    "operational_status": "operational",
+    "description": "Nightly renewals and indexation.",
+    "sys_updated_on": "2026-10-27T03:00:00Z"
+  },
+  {
+    "sys_id": "BS-1007",
+    "name": "Underwriting Workbench",
+    "ea_reference": "APP-0163",
+    "support_group": "Policy Core Support",
+    "operational_status": "operational",
+    "description": "Case handling for underwriters.",
+    "sys_updated_on": "2026-10-26T03:00:00Z"
+  },
+  {
+    "sys_id": "BS-1008",
+    "name": "Payment Gateway",
+    "ea_reference": "APP-0170",
+    "support_group": "Payments Support",
+    "operational_status": "operational",
+    "description": "Inbound and outbound payments for the group.",
+    "sys_updated_on": "2026-10-25T03:00:00Z"
+  },
+  {
+    "sys_id": "BS-1009",
+    "name": "Collections",
+    "ea_reference": "APP-0171",
+    "support_group": "Payments Support",
+    "operational_status": "operational",
+    "description": "Dunning and collections.",
+    "sys_updated_on": "2026-10-24T03:00:00Z"
+  },
+  {
+    "sys_id": "BS-1010",
+    "name": "Fraud Screening",
+    "ea_reference": "APP-0172",
+    "support_group": "Payments Support",
+    "operational_status": "operational",
+    "description": "Payment fraud rules and scores.",
+    "sys_updated_on": "2026-10-23T03:00:00Z"
+  },
+  {
+    "sys_id": "BS-1011",
+    "name": "Customer Portal",
+    "ea_reference": "APP-0180",
+    "support_group": "Customer Digital Support",
+    "operational_status": "operational",
+    "description": "Self service for customers: policies, claims, documents.",
+    "sys_updated_on": "2026-10-22T03:00:00Z"
+  },
+  {
+    "sys_id": "BS-1012",
+    "name": "Customer Master Data",
+    "ea_reference": "APP-0181",
+    "support_group": "Customer Digital Support",
+    "operational_status": "operational",
+    "description": "Golden record for customers.",
+    "sys_updated_on": "2026-10-21T03:00:00Z"
+  },
+  {
+    "sys_id": "BS-1013",
+    "name": "Notification Service",
+    "ea_reference": "APP-0182",
+    "support_group": "Customer Digital Support",
+    "operational_status": "operational",
+    "description": "E-mail, SMS and push notifications.",
+    "sys_updated_on": "2026-10-20T03:00:00Z"
+  },
+  {
+    "sys_id": "BS-1014",
+    "name": "Kestrel Mobile",
+    "ea_reference": "APP-0183",
+    "support_group": "Customer Digital Support",
+    "operational_status": "operational",
+    "description": "Mobile app for customers.",
+    "sys_updated_on": "2026-10-19T03:00:00Z"
+  },
+  {
+    "sys_id": "BS-1015",
+    "name": "Broker Portal",
+    "ea_reference": "APP-0190",
+    "support_group": "Broker Channel Support",
+    "operational_status": "operational",
+    "description": "Portal for independent brokers.",
+    "sys_updated_on": "2026-10-18T03:00:00Z"
+  },
+  {
+    "sys_id": "BS-1016",
+    "name": "Commission Engine",
+    "ea_reference": "APP-0191",
+    "support_group": "Broker Channel Support",
+    "operational_status": "operational",
+    "description": "Broker commissions.",
+    "sys_updated_on": "2026-10-17T03:00:00Z"
+  },
+  {
+    "sys_id": "BS-1017",
+    "name": "Partner API",
+    "ea_reference": "APP-0192",
+    "support_group": "Broker Channel Support",
+    "operational_status": "operational",
+    "description": "API for partners and comparison sites.",
+    "sys_updated_on": "2026-10-16T03:00:00Z"
+  },
+  {
+    "sys_id": "BS-1018",
+    "name": "General Ledger",
+    "ea_reference": "APP-0200",
+    "support_group": "Finance Systems Support",
+    "operational_status": "operational",
+    "description": "Group general ledger.",
+    "sys_updated_on": "2026-10-15T03:00:00Z"
+  },
+  {
+    "sys_id": "BS-1019",
+    "name": "Financial Reporting",
+    "ea_reference": "APP-0201",
+    "support_group": "Finance Systems Support",
+    "operational_status": "operational",
+    "description": "Statutory and management reporting.",
+    "sys_updated_on": "2026-10-14T03:00:00Z"
+  },
+  {
+    "sys_id": "BS-1020",
+    "name": "PayHub",
+    "ea_reference": "APP-0175",
+    "support_group": "Finance Systems Support",
+    "operational_status": "operational",
+    "description": "Outgoing payments for finance.",
+    "sys_updated_on": "2026-10-13T03:00:00Z"
+  },
+  {
+    "sys_id": "BS-1021",
+    "name": "Treasury Management",
+    "ea_reference": "APP-0202",
+    "support_group": "Finance Systems Support",
+    "operational_status": "operational",
+    "description": "Cash and liquidity.",
+    "sys_updated_on": "2026-10-12T03:00:00Z"
+  },
+  {
+    "sys_id": "BS-1022",
+    "name": "Risk Models",
+    "ea_reference": "APP-0210",
+    "support_group": "Risk Analytics Support",
+    "operational_status": "operational",
+    "description": "Actuarial and risk models.",
+    "sys_updated_on": "2026-10-11T03:00:00Z"
+  },
+  {
+    "sys_id": "BS-1023",
+    "name": "Regulatory Reporting",
+    "ea_reference": "APP-0211",
+    "support_group": "Risk Analytics Support",
+    "operational_status": "operational",
+    "description": "Supervisory reporting.",
+    "sys_updated_on": "2026-10-10T03:00:00Z"
+  },
+  {
+    "sys_id": "BS-1024",
+    "name": "Enterprise Data Warehouse",
+    "ea_reference": "APP-0220",
+    "support_group": "Data Platform Support",
+    "operational_status": "operational",
+    "description": "Enterprise data warehouse.",
+    "sys_updated_on": "2026-10-09T03:00:00Z"
+  },
+  {
+    "sys_id": "BS-1025",
+    "name": "Analytics Workbench",
+    "ea_reference": "APP-0221",
+    "support_group": "Data Platform Support",
+    "operational_status": "operational",
+    "description": "Notebooks and dashboards for analysts.",
+    "sys_updated_on": "2026-10-08T03:00:00Z"
+  },
+  {
+    "sys_id": "BS-1026",
+    "name": "Enterprise Service Bus",
+    "ea_reference": "APP-0230",
+    "support_group": "Integration Services Support",
+    "operational_status": "operational",
+    "description": "Group service bus.",
+    "sys_updated_on": "2026-10-07T03:00:00Z"
+  },
+  {
+    "sys_id": "BS-1027",
+    "name": "API Gateway",
+    "ea_reference": "APP-0231",
+    "support_group": "Integration Services Support",
+    "operational_status": "operational",
+    "description": "Group API gateway.",
+    "sys_updated_on": "2026-10-06T03:00:00Z"
+  },
+  {
+    "sys_id": "BS-1028",
+    "name": "Document Service",
+    "ea_reference": "APP-0232",
+    "support_group": "Integration Services Support",
+    "operational_status": "operational",
+    "description": "Document generation and delivery.",
+    "sys_updated_on": "2026-10-05T03:00:00Z"
+  },
+  {
+    "sys_id": "BS-1029",
+    "name": "Document Archive",
+    "ea_reference": "APP-0233",
+    "support_group": "Integration Services Support",
+    "operational_status": "operational",
+    "description": "Long-term document archive.",
+    "sys_updated_on": "2026-10-04T03:00:00Z"
+  },
+  {
+    "sys_id": "BS-1030",
+    "name": "Identity Hub",
+    "ea_reference": "APP-0240",
+    "support_group": "Identity and Access Support",
+    "operational_status": "operational",
+    "description": "Login for customers and employees.",
+    "sys_updated_on": "2026-10-03T03:00:00Z"
+  },
+  {
+    "sys_id": "BS-1031",
+    "name": "South Customer Portal",
+    "ea_reference": "APP-0250",
+    "support_group": "South Digital Support",
+    "operational_status": "operational",
+    "description": "Customer portal for Kestrel South.",
+    "sys_updated_on": "2026-10-02T03:00:00Z"
+  },
+  {
+    "sys_id": "BS-1032",
+    "name": "South Claims",
+    "ea_reference": "APP-0251",
+    "support_group": "South Digital Support",
+    "operational_status": "operational",
+    "description": "Claims handling for Kestrel South.",
+    "sys_updated_on": "2026-10-01T03:00:00Z"
+  },
+  {
+    "sys_id": "BS-1033",
+    "name": "CI Platform",
+    "ea_reference": "APP-0260",
+    "support_group": "Platform Engineering Support",
+    "operational_status": "operational",
+    "description": "Build and deployment pipelines.",
+    "sys_updated_on": "2026-09-30T03:00:00Z"
+  },
+  {
+    "sys_id": "BS-1034",
+    "name": "Observability Stack",
+    "ea_reference": "APP-0261",
+    "support_group": "Platform Engineering Support",
+    "operational_status": "operational",
+    "description": "Metrics, logs and traces.",
+    "sys_updated_on": "2026-09-29T03:00:00Z"
+  }
+]

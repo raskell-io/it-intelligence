@@ -1,0 +1,43 @@
+name: ci
+on:
+  push: {branches: [main]}
+  pull_request:
+
+jobs:
+  ontology:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: jdx/mise-action@v2
+      - name: generated files are up to date
+        run: make ontology-check
+
+  backend:
+    runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:17-alpine
+        env: {POSTGRES_USER: itx, POSTGRES_PASSWORD: itx, POSTGRES_DB: itx}
+        ports: ["5432:5432"]
+        options: --health-cmd "pg_isready -U itx" --health-interval 2s --health-retries 30
+    env:
+      ITX_DATABASE_URL: postgres://itx:itx@localhost:5432/itx
+      ITX_TEST_DATABASE_URL: postgres://itx:itx@localhost:5432/itx
+    steps:
+      - uses: actions/checkout@v5
+      - uses: jdx/mise-action@v2
+      - run: make lint build
+      - name: the seed is what seed/gen produces
+        run: make seed-gen && git diff --exit-code -- seed
+      - name: ingest the Kestrel Group
+        run: ./bin/itx ingest -inline
+      - run: make test
+      - name: the resolver against the answer key, the article against the system
+        run: ./bin/itx verify
+
+  web:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: jdx/mise-action@v2
+      - run: cd web && npm ci && npx tsc --noEmit && npx next build

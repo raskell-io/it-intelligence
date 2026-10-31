@@ -1,0 +1,20 @@
+# The Context Model: the ontology of the IT landscape.
+# This file and the two it imports are the single source of truth for every entity kind and relation kind.
+# Run `make ontology` after a change; CI fails if ontology/generated/ is out of date.
+id: https://example.org/it-intelligence/context-model
+name: context_model
+title: The Context Model
+description: >-
+  Entities concluded from what the sources of an IT landscape say, and the relationships between them.
+  Every relationship is stored as a row with a basis, a confidence and a source.
+version: 0.1.0
+license: Apache-2.0 OR MIT
+default_prefix: ctx
+default_range: string
+prefixes:
+  linkml: https://w3id.org/linkml/
+  ctx: https://example.org/it-intelligence/
+imports:
+  - linkml:types
+  - entities
+  - relations

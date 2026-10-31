@@ -1,0 +1,117 @@
+[
+  {
+    "repository": "kestrel/architecture-decisions",
+    "path": "docs/adr/0001-use-the-identity-hub-for-every-customer-login.md",
+    "number": 1,
+    "title": "Use the Identity Hub for every customer login",
+    "status": "accepted",
+    "date": "2025-03-22",
+    "constrains": [
+      "APP-0240",
+      "APP-0180",
+      "APP-0250"
+    ],
+    "url": "https://git.kestrel.example/kestrel/architecture-decisions/blob/main/docs/adr/0001-use-the-identity-hub-for-every-customer-login.md",
+    "updated_at": "2026-01-16T03:00:00Z"
+  },
+  {
+    "repository": "kestrel/architecture-decisions",
+    "path": "docs/adr/0002-retire-quote-engine-classic-in-favour-of-the-rating-engine.md",
+    "number": 2,
+    "title": "Retire Quote Engine Classic in favour of the Rating Engine",
+    "status": "accepted",
+    "date": "2025-06-30",
+    "constrains": [
+      "APP-0098",
+      "APP-0161"
+    ],
+    "url": "https://git.kestrel.example/kestrel/architecture-decisions/blob/main/docs/adr/0002-retire-quote-engine-classic-in-favour-of-the-rating-engine.md",
+    "updated_at": "2026-03-07T03:00:00Z"
+  },
+  {
+    "repository": "kestrel/architecture-decisions",
+    "path": "docs/adr/0003-all-customer-payments-go-through-the-payment-gateway.md",
+    "number": 3,
+    "title": "All customer payments go through the Payment Gateway",
+    "status": "accepted",
+    "date": "2025-09-18",
+    "constrains": [
+      "APP-0170",
+      "APP-0175",
+      "APP-0171"
+    ],
+    "url": "https://git.kestrel.example/kestrel/architecture-decisions/blob/main/docs/adr/0003-all-customer-payments-go-through-the-payment-gateway.md",
+    "updated_at": "2026-04-16T03:00:00Z"
+  },
+  {
+    "repository": "kestrel/architecture-decisions",
+    "path": "docs/adr/0004-internet-endpoints-sit-behind-the-waf-in-enforce-mode.md",
+    "number": 4,
+    "title": "Internet endpoints sit behind the WAF in enforce mode",
+    "status": "accepted",
+    "date": "2025-10-28",
+    "constrains": [
+      "APP-0231"
+    ],
+    "url": "https://git.kestrel.example/kestrel/architecture-decisions/blob/main/docs/adr/0004-internet-endpoints-sit-behind-the-waf-in-enforce-mode.md",
+    "updated_at": "2026-05-06T03:00:00Z"
+  },
+  {
+    "repository": "kestrel/architecture-decisions",
+    "path": "docs/adr/0005-asynchronous-integration-runs-on-the-enterprise-service-bus.md",
+    "number": 5,
+    "title": "Asynchronous integration runs on the Enterprise Service Bus",
+    "status": "accepted",
+    "date": "2025-11-27",
+    "constrains": [
+      "APP-0230",
+      "APP-0232"
+    ],
+    "url": "https://git.kestrel.example/kestrel/architecture-decisions/blob/main/docs/adr/0005-asynchronous-integration-runs-on-the-enterprise-service-bus.md",
+    "updated_at": "2026-05-21T03:00:00Z"
+  },
+  {
+    "repository": "kestrel/architecture-decisions",
+    "path": "docs/adr/0006-point-to-point-rest-between-claims-services.md",
+    "number": 6,
+    "title": "Point-to-point REST between claims services",
+    "status": "superseded",
+    "date": "2024-12-12",
+    "constrains": [
+      "APP-0150",
+      "APP-0151"
+    ],
+    "url": "https://git.kestrel.example/kestrel/architecture-decisions/blob/main/docs/adr/0006-point-to-point-rest-between-claims-services.md",
+    "updated_at": "2025-11-27T03:00:00Z"
+  },
+  {
+    "repository": "kestrel/architecture-decisions",
+    "path": "docs/adr/0007-claims-events-are-published-on-the-enterprise-service-bus.md",
+    "number": 7,
+    "title": "Claims events are published on the Enterprise Service Bus",
+    "status": "accepted",
+    "date": "2026-04-26",
+    "constrains": [
+      "APP-0150",
+      "APP-0151",
+      "APP-0230"
+    ],
+    "supersedes": 6,
+    "url": "https://git.kestrel.example/kestrel/architecture-decisions/blob/main/docs/adr/0007-claims-events-are-published-on-the-enterprise-service-bus.md",
+    "updated_at": "2026-08-04T03:00:00Z"
+  },
+  {
+    "repository": "kestrel/architecture-decisions",
+    "path": "docs/adr/0008-postgresql-is-the-default-relational-database.md",
+    "number": 8,
+    "title": "PostgreSQL is the default relational database",
+    "status": "accepted",
+    "date": "2026-06-15",
+    "constrains": [
+      "APP-0220",
+      "APP-0142"
+    ],
+    "url": "https://git.kestrel.example/kestrel/architecture-decisions/blob/main/docs/adr/0008-postgresql-is-the-default-relational-database.md",
+    "updated_at": "2026-08-29T03:00:00Z"
+  }
+]

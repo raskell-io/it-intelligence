@@ -1,0 +1,38 @@
+app_id,name,short_name,lifecycle,owner,market_units,capabilities,repositories,successor,description,last_modified
+APP-0142,Policy Administration,policy-admin,production,Claims Platform,MU-C;MU-N,CAP-01.2,kestrel/pol-adm-svc,,"Policy contracts, endorsements and renewals for retail lines.",2026-10-03T03:00:00Z
+APP-0150,Claims Intake,claims-intake,production,Claims Platform,MU-C;MU-N,CAP-02.1,,,First notice of loss and claim triage.,2026-04-06T03:00:00Z
+APP-0151,Claims Settlement,claims-settlement,production,Claims Platform,MU-C;MU-N,CAP-02.2,kestrel/clm-settle,,"Settlement, reserves and payout instructions for claims.",2026-01-16T03:00:00Z
+APP-0160,Product Catalogue,product-catalogue,production,Policy Core,MU-C;MU-N,CAP-01.1,kestrel/product-catalogue,,"Products, tariffs and coverages.",2025-10-08T03:00:00Z
+APP-0161,Rating Engine,rating-engine,production,Policy Core,MU-C,CAP-01.3,kestrel/rating-engine,,Premium calculation for all retail products.,2026-02-25T03:00:00Z
+APP-0162,Policy Batch,policy-batch,production,Policy Core,MU-C,,,,Nightly renewals and indexation.,2025-06-30T03:00:00Z
+APP-0098,Quote Engine Classic,quote-classic,retired,Policy Core,MU-C,CAP-01.3,kestrel/quote-classic,APP-0161,Legacy quoting engine.,2026-08-14T03:00:00Z
+APP-0163,Underwriting Workbench,uw-workbench,production,Policy Core,MU-N,CAP-01.3,kestrel/uw-workbench,,Case handling for underwriters.,2025-12-17T03:00:00Z
+APP-0170,Payment Gateway,payment-gateway,production,Payments,MU-C;MU-N;MU-S,CAP-03.1,kestrel/payment-gateway,,Inbound and outbound payments for the group.,2026-10-13T03:00:00Z
+APP-0171,Collections,collections,production,Payments,MU-C;MU-N,CAP-03.2,kestrel/collections-svc,,Dunning and collections.,2025-09-28T03:00:00Z
+APP-0172,Fraud Screening,fraud-screening,production,Payments,MU-C,CAP-07.4,kestrel/fraud-screening,,Payment fraud rules and scores.,2026-03-07T03:00:00Z
+APP-0180,Customer Portal,customer-portal,production,Customer Digital,MU-N;MU-C,CAP-04.1,kestrel/customer-portal-web;kestrel/customer-portal-bff,,"Self service for customers: policies, claims, documents.",2026-09-13T03:00:00Z
+APP-0181,Customer Master,customer-master,production,Customer Digital,MU-N;MU-C,CAP-04.3,kestrel/customer-master,,Golden record for customers.,2025-10-28T03:00:00Z
+APP-0182,Notification Service,notify,production,Customer Digital,MU-N;MU-C,CAP-04.2,,,"E-mail, SMS and push notifications.",2025-11-12T03:00:00Z
+APP-0183,Kestrel Mobile,kestrel-mobile,production,Customer Digital,MU-S,CAP-04.2,kestrel/kestrel-mobile,,Mobile app for customers.,2026-05-06T03:00:00Z
+APP-0190,Broker Portal,broker-portal,production,Broker Channel,MU-N,CAP-05.1,kestrel/broker-portal,,Portal for independent brokers.,2026-02-05T03:00:00Z
+APP-0191,Commission Engine,commission,production,Broker Channel,MU-N,CAP-05.2,kestrel/commission-engine,,Broker commissions.,2025-08-19T03:00:00Z
+APP-0192,Partner API,partner-api,production,Broker Channel,MU-N,,kestrel/partner-api,,API for partners and comparison sites.,2026-04-16T03:00:00Z
+APP-0200,General Ledger,general-ledger,production,Finance Systems,MU-C;MU-N;MU-S,CAP-06.1,kestrel/gl-core,,Group general ledger.,2025-06-30T03:00:00Z
+APP-0201,Financial Reporting,fin-reporting,production,Finance Systems,MU-C,CAP-06.2,kestrel/fin-reporting;kestrel/report-templates,,Statutory and management reporting.,2025-09-18T03:00:00Z
+APP-0175,PayHub,payhub,production,Finance Systems,MU-C,CAP-03.1,kestrel/payhub,,Outgoing payments for finance.,2025-03-22T03:00:00Z
+APP-0202,Treasury Management,treasury,production,Finance Systems,MU-C,CAP-06.3,kestrel/treasury,,Cash and liquidity.,2025-06-10T03:00:00Z
+APP-0210,Risk Models,risk-models,production,Risk Analytics,MU-C,CAP-07.1,kestrel/risk-models,,Actuarial and risk models.,2026-03-27T03:00:00Z
+APP-0211,Regulatory Reporting,reg-reporting,production,Risk Analytics,MU-C;MU-N;MU-S,CAP-07.2,kestrel/reg-reporting;kestrel/report-templates,,Supervisory reporting.,2026-04-26T03:00:00Z
+APP-0212,Solvency Calculator,solvency-calc,production,,MU-C,CAP-07.3,kestrel/solvency-calc,,Solvency capital calculation.,2024-12-12T03:00:00Z
+APP-0220,Enterprise Data Warehouse,data-warehouse,production,Data Platform,MU-C;MU-N;MU-S,CAP-09.1,kestrel/edw-pipelines,,Enterprise data warehouse.,2026-06-15T03:00:00Z
+APP-0221,Analytics Workbench,analytics-workbench,production,Data Platform,MU-C,CAP-09.2,kestrel/analytics-workbench,,Notebooks and dashboards for analysts.,2026-03-17T03:00:00Z
+APP-0108,Market Insight Portal,market-insight,production,Data Platform,MU-N,CAP-09.2,,,Market and competitor dashboards for sales.,2025-09-18T03:00:00Z
+APP-0230,Enterprise Service Bus,esb,production,Integration Services,MU-C;MU-N,CAP-08.1,kestrel/esb-config,,Group service bus.,2026-02-15T03:00:00Z
+APP-0231,API Gateway,api-gateway,production,Integration Services,MU-C;MU-N;MU-S,CAP-08.2,kestrel/gateway-config,,Group API gateway.,2026-08-04T03:00:00Z
+APP-0232,Document Service,document-service,production,Integration Services,MU-C,CAP-04.4,kestrel/document-service,,Document generation and delivery.,2025-12-07T03:00:00Z
+APP-0233,Document Archive,document-archive,production,Integration Services,MU-N,CAP-04.4,kestrel/doc-archive,,Long-term document archive.,2025-03-12T03:00:00Z
+APP-0240,Identity Hub,identity-hub,production,Identity and Access,MU-C;MU-N;MU-S,CAP-10.1,kestrel/identity-hub,,Login for customers and employees.,2026-09-28T03:00:00Z
+APP-0250,Kestrel South Customer Portal,south-portal,production,South Digital,MU-S,CAP-04.1,kestrel/south-portal,,Customer portal for Kestrel South.,2026-02-25T03:00:00Z
+APP-0251,South Claims,south-claims,production,South Digital,MU-S,CAP-02.1,kestrel/south-claims,,Claims handling for Kestrel South.,2025-10-28T03:00:00Z
+APP-0260,CI Platform,ci-platform,production,Platform Engineering,MU-C,,kestrel/ci-templates,,Build and deployment pipelines.,2026-04-26T03:00:00Z
+APP-0261,Observability Stack,observability,production,Platform Engineering,MU-C,,kestrel/obs-stack,,"Metrics, logs and traces.",2026-05-06T03:00:00Z

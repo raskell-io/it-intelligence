@@ -1,0 +1,151 @@
+openapi: 3.1.0
+info:
+  title: it-intelligence REST API
+  version: 0.1.0
+  description: >-
+    The Context Model of the IT landscape, for the web UI and other systems. Entity ids contain ":" and "/",
+    so they travel in the id query parameter. Every relationship carries basis, confidence, source and an
+    edge id that /edges/{edge}/explain explains. Writes start workflow runs and need an X-Actor header.
+  license: {name: Apache-2.0 OR MIT}
+servers: [{url: http://localhost:8080/api/v1}]
+components:
+  parameters:
+    id: {name: id, in: query, required: true, schema: {type: string}, example: "ctx:Application/policy-admin"}
+    actor: {name: X-Actor, in: header, required: true, schema: {type: string}, description: a person from config/people.yaml}
+  schemas:
+    EntitySummary:
+      type: object
+      properties: {id: {type: string}, kind: {type: string}, name: {type: string}, summary: {type: string}}
+    EdgeRef:
+      type: object
+      properties:
+        edge: {type: string}
+        kind: {type: string}
+        direction: {enum: [out, in]}
+        other: {type: string}
+        other_name: {type: string}
+        basis: {enum: [asserted, derived, inferred]}
+        confidence: {type: number}
+        status: {enum: [active, pending, rejected]}
+        source: {type: string}
+    Entity:
+      type: object
+      properties:
+        id: {type: string}
+        kind: {type: string}
+        name: {type: string}
+        standing: {enum: [secondary, primary]}
+        attributes: {type: object}
+        sources: {type: array, items: {type: string}}
+        last_seen: {type: string, format: date-time}
+        edges: {type: array, items: {$ref: "#/components/schemas/EdgeRef"}}
+    Owner:
+      type: object
+      properties:
+        entity: {type: string}
+        owner: {type: string}
+        owner_name: {type: string}
+        basis: {type: string}
+        confidence: {type: number}
+        edge: {type: string}
+        source: {type: string}
+        path: {type: array, items: {type: string}}
+        candidates: {type: array, items: {$ref: "#/components/schemas/EntitySummary"}}
+        note: {type: string}
+    Run:
+      type: object
+      properties: {run: {type: integer}}
+    Error:
+      type: object
+      properties: {error: {type: string}}
+paths:
+  /stats: {get: {summary: counts of entities and edges, and the reference time, responses: {"200": {description: ok}}}}
+  /ontology: {get: {summary: entity kinds, relation kinds and enums, generated from the ontology, responses: {"200": {description: ok}}}}
+  /people: {get: {summary: people the act-as picker offers, responses: {"200": {description: ok}}}}
+  /entities:
+    get:
+      summary: search entities by name, id or description
+      parameters:
+        - {name: q, in: query, schema: {type: string}}
+        - {name: kind, in: query, schema: {type: string}}
+        - {name: limit, in: query, schema: {type: integer, maximum: 50}}
+      responses: {"200": {description: ok, content: {application/json: {schema: {type: object, properties: {entities: {type: array, items: {$ref: "#/components/schemas/EntitySummary"}}}}}}}}
+  /entity:
+    get:
+      summary: one entity with its direct relationships (MCP get_entity)
+      parameters: [{$ref: "#/components/parameters/id"}]
+      responses:
+        "200": {description: ok, content: {application/json: {schema: {$ref: "#/components/schemas/Entity"}}}}
+        "404": {description: unknown id, content: {application/json: {schema: {$ref: "#/components/schemas/Error"}}}}
+  /owner:
+    get:
+      summary: the accountable team and how ownership was established (MCP find_owner); id may be free text
+      parameters: [{$ref: "#/components/parameters/id"}]
+      responses: {"200": {description: ok, content: {application/json: {schema: {$ref: "#/components/schemas/Owner"}}}}}
+  /impact:
+    get:
+      summary: everything that depends on an application, by distance (MCP impact_of_change)
+      parameters: [{$ref: "#/components/parameters/id"}, {name: depth, in: query, schema: {type: integer, minimum: 1, maximum: 6}}]
+      responses: {"200": {description: ok}}
+  /decisions:
+    get:
+      summary: architecture decisions that constrain an entity (MCP list_decisions)
+      parameters: [{$ref: "#/components/parameters/id"}]
+      responses: {"200": {description: ok}}
+  /diagram:
+    get:
+      summary: a Mermaid diagram of the neighbourhood (MCP render_diagram)
+      parameters: [{$ref: "#/components/parameters/id"}]
+      responses: {"200": {description: ok}}
+  /edges/{edge}/explain:
+    get:
+      summary: the evidence behind one edge (MCP explain_fact)
+      parameters: [{name: edge, in: path, required: true, schema: {type: string}}]
+      responses: {"200": {description: ok}, "404": {description: unknown edge}}
+  /review:
+    get:
+      summary: pending inferred links, for one team or all
+      parameters: [{name: team, in: query, schema: {type: string}}]
+      responses: {"200": {description: ok}}
+  /scorecards:
+    get:
+      summary: the latest scorecard per data set, worst first
+      parameters: [{name: failing, in: query, schema: {type: boolean}, description: include the failing records}]
+      responses: {"200": {description: ok}}
+  /datasets: {get: {summary: data sets with their standing, responses: {"200": {description: ok}}}}
+  /artifacts:
+    get:
+      summary: artifacts of the latest snapshot
+      parameters:
+        - {name: kind, in: query, schema: {enum: [diagram, insight, draft]}}
+        - {name: subject, in: query, schema: {type: string}}
+        - {name: body, in: query, schema: {type: boolean}}
+      responses: {"200": {description: ok}}
+  /findings: {get: {summary: insight findings of the latest snapshot, responses: {"200": {description: ok}}}}
+  /runs:
+    get: {summary: recent workflow runs, responses: {"200": {description: ok}}}
+    post:
+      summary: start IngestSource, IngestAll or BuildArtifacts
+      parameters: [{$ref: "#/components/parameters/actor"}]
+      requestBody: {content: {application/json: {schema: {type: object, properties: {workflow: {type: string}, input: {type: object}}}}}}
+      responses: {"200": {description: started, content: {application/json: {schema: {$ref: "#/components/schemas/Run"}}}}, "401": {description: no actor}}
+  /runs/{id}:
+    get: {summary: one run with its steps, parameters: [{name: id, in: path, required: true, schema: {type: integer}}], responses: {"200": {description: ok}}}
+  /edges/{id}/confirm: &link
+    post:
+      summary: confirm or reject an inferred link (starts ConfirmLink)
+      parameters: [{name: id, in: path, required: true, schema: {type: string}}, {$ref: "#/components/parameters/actor"}]
+      requestBody: {content: {application/json: {schema: {type: object, properties: {note: {type: string}}}}}}
+      responses: {"200": {description: started, content: {application/json: {schema: {$ref: "#/components/schemas/Run"}}}}}
+  /edges/{id}/reject: *link
+  /aliases/{id}/confirm: *link
+  /aliases/{id}/reject: *link
+  /datasets/{source}/{dataset}/primary:
+    post:
+      summary: declare a data set primary; the actor approves a request by someone else (starts DeclarePrimary)
+      parameters:
+        - {name: source, in: path, required: true, schema: {type: string}}
+        - {name: dataset, in: path, required: true, schema: {type: string}}
+        - {$ref: "#/components/parameters/actor"}
+      requestBody: {content: {application/json: {schema: {type: object, required: [owner, requester], properties: {owner: {type: string}, requester: {type: string}}}}}}
+      responses: {"200": {description: started}}

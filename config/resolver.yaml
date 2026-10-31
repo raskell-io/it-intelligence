@@ -1,0 +1,28 @@
+# Identity resolution. See resolver/config.go for every field and its default.
+accept: 0.9          # inferred links at or above: active
+review: 0.6          # between review and accept: queued for the owning team; below: dropped and logged
+asserted_base: 0.7   # asserted facts start at base + span * the source's last overall score
+asserted_span: 0.3
+default_score: 0.9   # before a data set has its first scorecard
+rules:               # name: precision. Measured against seed/truth.yaml by `itx verify --resolver`.
+  realised_via_build: 0.95
+  same_normalised_name: 0.9
+  team_owns_single_app: 0.7
+  owner_via_workloads: 0.95
+  owner_via_namespace: 0.9
+  app_owner_via_namespace: 0.75
+  exposed_via_route: 0.95
+name_suffixes: [-svc, -service]
+shortlist_size: 5
+
+# Which model judges what keys and rules cannot settle.
+#   fixture            replays seed/judgements.jsonl: offline, deterministic, the default
+#   openai-compatible  a local model (Ollama: base_url http://localhost:11434/v1) or any compatible endpoint
+#   anthropic          the Claude API; credentials from ANTHROPIC_API_KEY
+provider:
+  kind: fixture
+  # kind: openai-compatible
+  # base_url: http://localhost:11434/v1
+  # model: qwen3:8b
+  # kind: anthropic
+  # model: claude-opus-5-5

@@ -1,0 +1,733 @@
+{
+    "$defs": {
+        "Application": {
+            "additionalProperties": false,
+            "description": "A thing the business recognises as one system, however many parts it has.",
+            "properties": {
+                "depends_on": {
+                    "description": "The application calls, or needs, this other application.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "deployed_as": {
+                    "description": "The application runs as this workload.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "description": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "ea_id": {
+                    "description": "The application id in the EA repository, when it has one.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "exposed_via": {
+                    "description": "The application is reachable through this endpoint.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "id": {
+                    "description": "The Context Model id, for example ctx:Application/policy-admin.",
+                    "type": "string"
+                },
+                "incidents_90d": {
+                    "description": "Incidents in the last 90 days, from IT service management.",
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "last_seen": {
+                    "format": "date-time",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "lifecycle": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/Lifecycle"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ]
+                },
+                "name": {
+                    "type": "string"
+                },
+                "not_in_ea": {
+                    "description": "True when no EA repository record backs the application.",
+                    "type": [
+                        "boolean",
+                        "null"
+                    ]
+                },
+                "operated_by": {
+                    "description": "The application is operated by, and serves, this market unit.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "owned_by": {
+                    "description": "The accountable team.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "realised_by": {
+                    "description": "The application is implemented in this repository.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "replaced_by": {
+                    "description": "The application is, or will be, replaced by this successor.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "standing": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/Standing"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ]
+                },
+                "supports": {
+                    "description": "The application supports this business capability.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                }
+            },
+            "required": [
+                "id",
+                "name"
+            ],
+            "title": "Application",
+            "type": "object"
+        },
+        "Basis": {
+            "description": "How a relationship was established.",
+            "enum": [
+                "asserted",
+                "derived",
+                "inferred"
+            ],
+            "title": "Basis",
+            "type": "string"
+        },
+        "Capability": {
+            "additionalProperties": false,
+            "description": "A business capability from the enterprise architecture capability map.",
+            "properties": {
+                "id": {
+                    "description": "The Context Model id, for example ctx:Application/policy-admin.",
+                    "type": "string"
+                },
+                "last_seen": {
+                    "format": "date-time",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "level": {
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "name": {
+                    "type": "string"
+                },
+                "refines": {
+                    "description": "The capability is a part of this broader capability.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "standing": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/Standing"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ]
+                }
+            },
+            "required": [
+                "id",
+                "name"
+            ],
+            "title": "Capability",
+            "type": "object"
+        },
+        "Decision": {
+            "additionalProperties": false,
+            "description": "An architecture decision record, with the entities it constrains.",
+            "properties": {
+                "constrains": {
+                    "description": "The decision applies to this entity.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "decided_on": {
+                    "format": "date",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "id": {
+                    "description": "The Context Model id, for example ctx:Application/policy-admin.",
+                    "type": "string"
+                },
+                "last_seen": {
+                    "format": "date-time",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "name": {
+                    "type": "string"
+                },
+                "standing": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/Standing"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ]
+                },
+                "status": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/DecisionStatus"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ]
+                },
+                "supersedes": {
+                    "description": "The decision replaces this earlier decision.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "url": {
+                    "format": "uri",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "required": [
+                "id",
+                "name"
+            ],
+            "title": "Decision",
+            "type": "object"
+        },
+        "DecisionStatus": {
+            "description": "",
+            "enum": [
+                "proposed",
+                "accepted",
+                "superseded"
+            ],
+            "title": "DecisionStatus",
+            "type": "string"
+        },
+        "Endpoint": {
+            "additionalProperties": false,
+            "description": "A reachable host and path prefix.",
+            "properties": {
+                "exposure": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/Exposure"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ]
+                },
+                "id": {
+                    "description": "The Context Model id, for example ctx:Application/policy-admin.",
+                    "type": "string"
+                },
+                "last_seen": {
+                    "format": "date-time",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "name": {
+                    "type": "string"
+                },
+                "owned_by": {
+                    "description": "The accountable team.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "routes_to": {
+                    "description": "The endpoint sends traffic to this workload.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "standing": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/Standing"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ]
+                },
+                "waf": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/WafMode"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ]
+                }
+            },
+            "required": [
+                "id",
+                "name"
+            ],
+            "title": "Endpoint",
+            "type": "object"
+        },
+        "Entity": {
+            "additionalProperties": false,
+            "description": "Something the Context Model concluded exists, from one or more observations.",
+            "properties": {
+                "id": {
+                    "description": "The Context Model id, for example ctx:Application/policy-admin.",
+                    "type": "string"
+                },
+                "last_seen": {
+                    "format": "date-time",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "name": {
+                    "type": "string"
+                },
+                "standing": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/Standing"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ]
+                }
+            },
+            "required": [
+                "id",
+                "name"
+            ],
+            "title": "Entity",
+            "type": "object"
+        },
+        "Exposure": {
+            "description": "",
+            "enum": [
+                "internal",
+                "internet"
+            ],
+            "title": "Exposure",
+            "type": "string"
+        },
+        "Lifecycle": {
+            "description": "",
+            "enum": [
+                "planned",
+                "production",
+                "retiring",
+                "retired"
+            ],
+            "title": "Lifecycle",
+            "type": "string"
+        },
+        "MarketUnit": {
+            "additionalProperties": false,
+            "description": "An organisational unit of the group, usually a country or a region.",
+            "properties": {
+                "id": {
+                    "description": "The Context Model id, for example ctx:Application/policy-admin.",
+                    "type": "string"
+                },
+                "last_seen": {
+                    "format": "date-time",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "name": {
+                    "type": "string"
+                },
+                "standing": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/Standing"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ]
+                }
+            },
+            "required": [
+                "id",
+                "name"
+            ],
+            "title": "MarketUnit",
+            "type": "object"
+        },
+        "Namespace": {
+            "additionalProperties": false,
+            "description": "A namespace on a container cluster.",
+            "properties": {
+                "cluster": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "id": {
+                    "description": "The Context Model id, for example ctx:Application/policy-admin.",
+                    "type": "string"
+                },
+                "last_seen": {
+                    "format": "date-time",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "name": {
+                    "type": "string"
+                },
+                "owned_by": {
+                    "description": "The accountable team.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "standing": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/Standing"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ]
+                }
+            },
+            "required": [
+                "id",
+                "name"
+            ],
+            "title": "Namespace",
+            "type": "object"
+        },
+        "Repository": {
+            "additionalProperties": false,
+            "description": "A code repository on the git host.",
+            "properties": {
+                "archived": {
+                    "description": "The git host marks the repository read-only.",
+                    "type": [
+                        "boolean",
+                        "null"
+                    ]
+                },
+                "committers_12m": {
+                    "description": "Distinct committers in the last twelve months.",
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "description": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "id": {
+                    "description": "The Context Model id, for example ctx:Application/policy-admin.",
+                    "type": "string"
+                },
+                "last_commit": {
+                    "format": "date-time",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "last_seen": {
+                    "format": "date-time",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "name": {
+                    "type": "string"
+                },
+                "owned_by": {
+                    "description": "The accountable team.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "standing": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/Standing"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ]
+                },
+                "truck_factor": {
+                    "description": "People who would have to leave before the repository stalls.",
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                }
+            },
+            "required": [
+                "id",
+                "name"
+            ],
+            "title": "Repository",
+            "type": "object"
+        },
+        "Standing": {
+            "description": "Who is authoritative for a fact. Set per data set; an entity takes the standing of its data sets.",
+            "enum": [
+                "secondary",
+                "primary"
+            ],
+            "title": "Standing",
+            "type": "string"
+        },
+        "Team": {
+            "additionalProperties": false,
+            "description": "An accountable team.",
+            "properties": {
+                "id": {
+                    "description": "The Context Model id, for example ctx:Application/policy-admin.",
+                    "type": "string"
+                },
+                "last_seen": {
+                    "format": "date-time",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "name": {
+                    "type": "string"
+                },
+                "part_of": {
+                    "description": "The team belongs to this market unit.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "standing": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/Standing"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ]
+                }
+            },
+            "required": [
+                "id",
+                "name"
+            ],
+            "title": "Team",
+            "type": "object"
+        },
+        "WafMode": {
+            "description": "",
+            "enum": [
+                "enforced",
+                "monitor",
+                "none"
+            ],
+            "title": "WafMode",
+            "type": "string"
+        },
+        "Workload": {
+            "additionalProperties": false,
+            "description": "A deployed unit on a cluster, such as a deployment, a stateful set or a cron job.",
+            "properties": {
+                "built_from": {
+                    "description": "The workload's image is built from this repository.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "id": {
+                    "description": "The Context Model id, for example ctx:Application/policy-admin.",
+                    "type": "string"
+                },
+                "image": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "last_seen": {
+                    "format": "date-time",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "name": {
+                    "type": "string"
+                },
+                "owned_by": {
+                    "description": "The accountable team.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "replicas": {
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "runs_in": {
+                    "description": "The workload runs in this namespace.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "standing": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/Standing"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ]
+                },
+                "workload_type": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "required": [
+                "id",
+                "name"
+            ],
+            "title": "Workload",
+            "type": "object"
+        }
+    },
+    "$id": "https://example.org/it-intelligence/context-model",
+    "$schema": "https://json-schema.org/draft/2019-09/schema",
+    "additionalProperties": true,
+    "metamodel_version": "1.12.0",
+    "title": "context_model",
+    "type": "object",
+    "version": "0.1.0"
+}
+

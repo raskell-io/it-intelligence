@@ -1,0 +1,12 @@
+# Untested against a real cluster in the reference; a starting point, not a production chart.
+image:
+  itx: ghcr.io/raskell-io/it-intelligence/itx:0.1.0
+  web: ghcr.io/raskell-io/it-intelligence/web:0.1.0
+database:
+  # A Secret with key url: postgres://user:password@host:5432/db
+  existingSecret: it-intelligence-db
+itx:
+  replicas: 2          # several replicas share the workflow runs (FOR UPDATE SKIP LOCKED)
+  schedules: true      # ingest every source on its interval
+web:
+  replicas: 1

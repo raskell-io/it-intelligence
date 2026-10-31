@@ -1,0 +1,17 @@
+# Invented people of the Kestrel Group, for the "act as" picker. The reference has no authentication;
+# writes still carry a name, because confirmations and primary declarations do. Replace with real identity.
+people:
+  - {id: ana.ferreira, name: Ana Ferreira, team: claims-platform}
+  - {id: tom.becker, name: Tom Becker, team: claims-platform}
+  - {id: lena.horvat, name: Lena Horvat, team: policy-core}
+  - {id: sam.okafor, name: Sam Okafor, team: payments}
+  - {id: mira.lindqvist, name: Mira Lindqvist, team: customer-digital}
+  - {id: jon.aalto, name: Jon Aalto, team: broker-channel}
+  - {id: eva.moreau, name: Eva Moreau, team: finance-systems}
+  - {id: raj.menon, name: Raj Menon, team: risk-analytics}
+  - {id: ines.duarte, name: Ines Duarte, team: data-platform}
+  - {id: karl.weiss, name: Karl Weiss, team: integration-services}
+  - {id: noa.levi, name: Noa Levi, team: identity-and-access}
+  - {id: luca.rossi, name: Luca Rossi, team: south-digital}
+  - {id: priya.nair, name: Priya Nair, team: platform-engineering}
+  - {id: alex.chen, name: Alex Chen, team: enterprise-architecture}

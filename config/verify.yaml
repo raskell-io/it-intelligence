@@ -1,0 +1,6 @@
+# The resolver quality CI accepts on the Kestrel seed. Raise these when the resolver gets better; never
+# lower them without saying why in the pull request. Measured 2026-10-31: 0.996 / 0.994 / 1.0 / 1.0.
+edge_precision: 0.99
+edge_recall: 0.99
+alias_precision: 1.0
+alias_recall: 1.0

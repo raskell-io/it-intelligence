@@ -1,0 +1,380 @@
+{
+  "version": "0.1.0",
+  "kinds": [
+    {
+      "kind": "Application",
+      "description": "A thing the business recognises as one system, however many parts it has.",
+      "id_pattern": "{short_name}",
+      "attributes": [
+        {
+          "name": "description",
+          "description": "",
+          "type": "string"
+        },
+        {
+          "name": "ea_id",
+          "description": "The application id in the EA repository, when it has one.",
+          "type": "string"
+        },
+        {
+          "name": "incidents_90d",
+          "description": "Incidents in the last 90 days, from IT service management.",
+          "type": "integer"
+        },
+        {
+          "name": "lifecycle",
+          "description": "",
+          "type": "enum",
+          "enum": "Lifecycle"
+        },
+        {
+          "name": "not_in_ea",
+          "description": "True when no EA repository record backs the application.",
+          "type": "boolean"
+        }
+      ]
+    },
+    {
+      "kind": "Capability",
+      "description": "A business capability from the enterprise architecture capability map.",
+      "id_pattern": "{slug}",
+      "attributes": [
+        {
+          "name": "level",
+          "description": "",
+          "type": "integer"
+        }
+      ]
+    },
+    {
+      "kind": "Decision",
+      "description": "An architecture decision record, with the entities it constrains.",
+      "id_pattern": "{repo}/{number}",
+      "attributes": [
+        {
+          "name": "decided_on",
+          "description": "",
+          "type": "date"
+        },
+        {
+          "name": "status",
+          "description": "",
+          "type": "enum",
+          "enum": "DecisionStatus"
+        },
+        {
+          "name": "url",
+          "description": "",
+          "type": "uri"
+        }
+      ]
+    },
+    {
+      "kind": "Endpoint",
+      "description": "A reachable host and path prefix.",
+      "id_pattern": "{host}{path}",
+      "attributes": [
+        {
+          "name": "exposure",
+          "description": "",
+          "type": "enum",
+          "enum": "Exposure"
+        },
+        {
+          "name": "waf",
+          "description": "",
+          "type": "enum",
+          "enum": "WafMode"
+        }
+      ]
+    },
+    {
+      "kind": "MarketUnit",
+      "description": "An organisational unit of the group, usually a country or a region.",
+      "id_pattern": "{slug}",
+      "attributes": []
+    },
+    {
+      "kind": "Namespace",
+      "description": "A namespace on a container cluster.",
+      "id_pattern": "{name}",
+      "attributes": [
+        {
+          "name": "cluster",
+          "description": "",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "kind": "Repository",
+      "description": "A code repository on the git host.",
+      "id_pattern": "{org}/{name}",
+      "attributes": [
+        {
+          "name": "archived",
+          "description": "The git host marks the repository read-only.",
+          "type": "boolean"
+        },
+        {
+          "name": "committers_12m",
+          "description": "Distinct committers in the last twelve months.",
+          "type": "integer"
+        },
+        {
+          "name": "description",
+          "description": "",
+          "type": "string"
+        },
+        {
+          "name": "last_commit",
+          "description": "",
+          "type": "datetime"
+        },
+        {
+          "name": "truck_factor",
+          "description": "People who would have to leave before the repository stalls.",
+          "type": "integer"
+        }
+      ]
+    },
+    {
+      "kind": "Team",
+      "description": "An accountable team.",
+      "id_pattern": "{slug}",
+      "attributes": []
+    },
+    {
+      "kind": "Workload",
+      "description": "A deployed unit on a cluster, such as a deployment, a stateful set or a cron job.",
+      "id_pattern": "{namespace}/{name}",
+      "attributes": [
+        {
+          "name": "image",
+          "description": "",
+          "type": "string"
+        },
+        {
+          "name": "replicas",
+          "description": "",
+          "type": "integer"
+        },
+        {
+          "name": "workload_type",
+          "description": "",
+          "type": "string"
+        }
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "kind": "built_from",
+      "description": "The workload's image is built from this repository.",
+      "domain": [
+        "Workload"
+      ],
+      "range": [
+        "Repository"
+      ],
+      "cardinality": "one"
+    },
+    {
+      "kind": "constrains",
+      "description": "The decision applies to this entity.",
+      "domain": [
+        "Decision"
+      ],
+      "range": [
+        "Application",
+        "Capability",
+        "Decision",
+        "Endpoint",
+        "MarketUnit",
+        "Namespace",
+        "Repository",
+        "Team",
+        "Workload"
+      ],
+      "cardinality": "many"
+    },
+    {
+      "kind": "depends_on",
+      "description": "The application calls, or needs, this other application.",
+      "domain": [
+        "Application"
+      ],
+      "range": [
+        "Application"
+      ],
+      "cardinality": "many"
+    },
+    {
+      "kind": "deployed_as",
+      "description": "The application runs as this workload.",
+      "domain": [
+        "Application"
+      ],
+      "range": [
+        "Workload"
+      ],
+      "cardinality": "many"
+    },
+    {
+      "kind": "exposed_via",
+      "description": "The application is reachable through this endpoint.",
+      "domain": [
+        "Application"
+      ],
+      "range": [
+        "Endpoint"
+      ],
+      "cardinality": "many"
+    },
+    {
+      "kind": "operated_by",
+      "description": "The application is operated by, and serves, this market unit.",
+      "domain": [
+        "Application"
+      ],
+      "range": [
+        "MarketUnit"
+      ],
+      "cardinality": "many"
+    },
+    {
+      "kind": "owned_by",
+      "description": "The accountable team.",
+      "domain": [
+        "Application",
+        "Repository",
+        "Workload",
+        "Namespace",
+        "Endpoint"
+      ],
+      "range": [
+        "Team"
+      ],
+      "cardinality": "one"
+    },
+    {
+      "kind": "part_of",
+      "description": "The team belongs to this market unit.",
+      "domain": [
+        "Team"
+      ],
+      "range": [
+        "MarketUnit"
+      ],
+      "cardinality": "one"
+    },
+    {
+      "kind": "realised_by",
+      "description": "The application is implemented in this repository.",
+      "domain": [
+        "Application"
+      ],
+      "range": [
+        "Repository"
+      ],
+      "cardinality": "many"
+    },
+    {
+      "kind": "refines",
+      "description": "The capability is a part of this broader capability.",
+      "domain": [
+        "Capability"
+      ],
+      "range": [
+        "Capability"
+      ],
+      "cardinality": "one"
+    },
+    {
+      "kind": "replaced_by",
+      "description": "The application is, or will be, replaced by this successor.",
+      "domain": [
+        "Application"
+      ],
+      "range": [
+        "Application"
+      ],
+      "cardinality": "one"
+    },
+    {
+      "kind": "routes_to",
+      "description": "The endpoint sends traffic to this workload.",
+      "domain": [
+        "Endpoint"
+      ],
+      "range": [
+        "Workload"
+      ],
+      "cardinality": "many"
+    },
+    {
+      "kind": "runs_in",
+      "description": "The workload runs in this namespace.",
+      "domain": [
+        "Workload"
+      ],
+      "range": [
+        "Namespace"
+      ],
+      "cardinality": "one"
+    },
+    {
+      "kind": "supersedes",
+      "description": "The decision replaces this earlier decision.",
+      "domain": [
+        "Decision"
+      ],
+      "range": [
+        "Decision"
+      ],
+      "cardinality": "one"
+    },
+    {
+      "kind": "supports",
+      "description": "The application supports this business capability.",
+      "domain": [
+        "Application"
+      ],
+      "range": [
+        "Capability"
+      ],
+      "cardinality": "many"
+    }
+  ],
+  "enums": {
+    "Basis": [
+      "asserted",
+      "derived",
+      "inferred"
+    ],
+    "DecisionStatus": [
+      "proposed",
+      "accepted",
+      "superseded"
+    ],
+    "Exposure": [
+      "internal",
+      "internet"
+    ],
+    "Lifecycle": [
+      "planned",
+      "production",
+      "retiring",
+      "retired"
+    ],
+    "Standing": [
+      "secondary",
+      "primary"
+    ],
+    "WafMode": [
+      "enforced",
+      "monitor",
+      "none"
+    ]
+  }
+}
