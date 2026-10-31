@@ -49,6 +49,40 @@ Three places are worth a look after the first ingest:
 - **A coding agent**: this repository carries a `.mcp.json`. Open Claude Code here and ask *"who owns
   claims-prod and what depends on it?"*; it answers in two tool calls and cites its path through the graph.
 
+## How it fits together
+
+```text
+   EA repo   ITSM   git host   clusters   gateway   WAF        the company's tools
+      │        │        │          │         │       │
+      └────────┴────────┴────┬─────┴─────────┴───────┘
+                             ▼
+                  connectors: read, emit observations
+                             ▼
+   ┌──────────────────────────── itx (one Go binary) ────────────────────────────┐
+   │                                                                             │
+   │  workflow runner: Extract ─▶ Judge ─▶ Build ─▶ Score ─▶ Snapshot, insights  │
+   │                                │         │                                  │
+   │                     model (recorded,   mappers + resolver:                  │
+   │                     local or hosted)   keys ─▶ rules ─▶ inference           │
+   │                                                                             │
+   │  api/query, the one query layer ──┬── REST  /api/v1                         │
+   │                                   └── MCP   /mcp                            │
+   └──────────────────────────────────────┬──────────────────────────────────────┘
+                                          ▼
+             PostgreSQL: observations · entities · edges (basis, confidence,
+                         source) · scorecards · snapshots · artifacts · runs
+
+   web UI (Next.js) ──REST──▶ itx ◀──MCP── coding agents (Claude Code and others)
+   other systems ─────REST──▶ itx
+
+   ontology/ (LinkML) ──▶ store vocabulary, Go and TypeScript types,
+                          JSON Schema, OWL, SHACL, docs
+```
+
+Observations are append-only. Every build recomputes the model from the latest observations, the
+recorded judgements and the decision log, so it can always be explained and rebuilt. More in
+[docs/architecture.md](docs/architecture.md).
+
 ## What is in it
 
 ```text
@@ -65,7 +99,7 @@ seed/          the Kestrel Group: exports of six tools, truth.yaml (the answer k
 config/        sources, mapping conventions, resolver thresholds and rules, people, verify baseline
 cmd/itx/       the one binary: serve, ingest, verify, runs, resolver record, snapshot
 deploy/        docker compose for a laptop, a Helm chart for a cluster
-docs/          ADRs, adding a source
+docs/          architecture, the Context Model, resolution, scoring, agents, operations, ADRs
 ```
 
 The stack is open source and unsurprising: LinkML, Go, PostgreSQL, the official MCP Go SDK, Next.js,
